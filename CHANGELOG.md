@@ -1,3 +1,8 @@
+# v2.0.1
+### Update README.md.
+
+- README.md was updated.
+
 # v2.0.0
 ### Breaking changes and improvements.
 

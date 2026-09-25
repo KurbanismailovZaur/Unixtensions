@@ -2,7 +2,7 @@
   "author": "\u0421odomaster",
   "license": "MIT",
   "name": "com.codomaster.unixtensions",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "displayName": "Unixtensions",
   "description": "The package contains a lot of extension methods for unity, which make code writing more convenient!",
   "category": "Tools",

@@ -1,77 +1,105 @@
 Unixtensions is a package that contains many extension methods for popular classes in Unity that you can use to write more expressive and concise code.
 
-For example:
-```C#
-// Setting a new global position along the desired axis.
+Add these imports to your script:
+
+```csharp
+using System.Collections.Generic;
+using UnityEngine;
+using Unixtensions;
+```
+
+Use the following examples inside a `MonoBehaviour` method, where `transform` refers to the current object:
+
+```csharp
+// Set the world-space X position.
 transform.SetPositionX(1f);
 
-// Setting local rotation through Euler angles along the desired axex.
+// Set the local X and Z Euler angles.
 transform.SetLocalEulerAnglesXZ(45f, 90f);
 
-// Reset the transformation state to default values (position and rotation to zero, scale to one).
+// Reset local position to zero, local rotation to identity, and local scale to one.
 transform.Reset();
 
-// Moves one position down in the hierarchy.
+// Move to the next sibling index in the hierarchy.
 transform.SetToNextSibling();
 
-// Returns all child objects.
-var childs = transform.GetChilds();
+// Get the transforms of all direct children.
+var children = transform.GetChilds();
 
-// Will delete all child objects based on condition.
-transform.DestroyChildsWhere(c => c.name == "Enemy");
+// Destroy direct child game objects that match the condition.
+transform.DestroyChildsWhere(child => child.name == "Enemy");
 
-// Assign a position with a zeroed value along the Y axis.
-transform.position = otherTransform.position.WithY(0f);
+// Return a modified vector copy and assign it back to the position.
+transform.position = transform.position.WithY(0f);
 
-// Create and return a new vector from components [z, x, y]
-transform.position = vector.GetZXY();
+// Reorder vector components from [x, y, z] to [z, x, y].
+var vector = new Vector3(1f, 2f, 3f);
+var reordered = vector.GetZXY(); // (3, 1, 2)
 
-// Inserts the value 1f along the Y axis. From [x, y] You get [x, 1f, y].
-transform.position = vector2.InsertY(1f);
+// Insert a Y component: [x, y] becomes [x, 1, y].
+var vector2 = new Vector2(2f, 3f);
+var expanded = vector2.InsertY(1f); // (2, 1, 3)
 
-// Partially inverts a vector:
-var partialNegated = transform.position.WithNegateXZ();
+// Negate only the X and Z components.
+var partiallyNegated = vector.WithNegateXZ(); // (-1, 2, -3)
 
-// Will check if the vector is homogeneous:
+// Check whether all scale components are approximately equal.
 var isUniform = transform.localScale.IsUniform();
 
-// Returns the point closest to the vector (used as the position in space) from the specified list.
-var closest = transform.position.GetClosestPoint(pointsList);
-print($"Point: {closest.point}\nIndex: {closest.index}");
+// Find the closest point and its index in an array or IList<Vector3>.
+var points = new[] { Vector3.zero, Vector3.right, Vector3.forward };
+var closest = transform.position.GetClosestPoint(points);
+Debug.Log($"Point: {closest.point}, index: {closest.index}");
 
-// We get a return beam, the beginning of which begins at 10 meters along the original beam.
+// Reverse a ray from a point 10 units along its original direction.
+var ray = new Ray(transform.position, transform.forward);
 var reversed = ray.Reversed(10f);
 
-// Returns a ray deviated from its original direction by a random angle.
-var deflected = ray.RandomDeflected(45f);
+// Randomly deflect the ray with yaw and pitch limits of 45 degrees.
+var deflected = ray.WithRandomDeflection(45f);
 
-// Returns a copy with the color channel value changed.
-image.color = someColor.WithGA(1f, 0.5f);
+// Return a color copy with new green and alpha channel values.
+var color = Color.white.WithGA(1f, 0.5f);
 
-// Will reassign a value in one range to a value in another.
+// Map a value from one range to another without clamping.
 var x = 0.25f;
-var remapped = x.Remap(0f, 1f, 0f, 2f);
+var remapped = x.Remap(0f, 1f, 0f, 2f); // 0.5
+```
 
-// Returns a random element.
-var element = list.GetRandom();
-var elements = list.GetRandoms(3);
+Random selection, shuffling, and `MinBy`/`MaxBy` work on `IList<T>`, including arrays and `List<T>`. Use a resizable list for methods that remove elements:
 
-// Will return a random element according to their probabilities (in this example: hello = 35%, bye = 50%, ok = 25%).
-var words = new string[] {"hello", "bye", "ok"};
-var random = words.GetRandomWithProbability(35f, 50f, 25f);
+```csharp
+var numbers = new List<int> { 4, -7, 12, 1, 0 };
 
-// Returns a shuffled list.
-var shuffled = list.Shuffled();
+// Select elements without modifying the source list.
+var element = numbers.GetRandom();
+var elements = numbers.GetRandoms(3); // Three distinct positions, in source order.
 
-// Converts any collection to a string in the format "[1, 2, 3]".
-var array = new int[] { 4, -7, 12, 1, 0 };
-print(array.AsString()); // Prints to the console -> [4, -7, 12, 1, 0]
+// Use relative weights: hello = 30%, bye = 50%, ok = 20%.
+var words = new[] { "hello", "bye", "ok" };
+var random = words.GetRandomWithProbability(3f, 5f, 2f);
+Debug.Log($"Word: {random.element}, index: {random.index}");
 
-// Retrieves an element from a list. You can retrieve multiple items at once.
-var popped = list.Pop(4); // Retrieved the element at index 4.
+// Find extrema in a nonempty list; each result contains index and element.
+var minimum = numbers.MinBy(value => value);
+var maximum = numbers.MaxBy(value => value);
+Debug.Log($"Minimum: {minimum.element} at {minimum.index}, maximum: {maximum.element} at {maximum.index}");
 
-// Retrieves random elements from a list.
-var popped = list.PopRandoms(2); // Extracted 2 random elements.
+// Format any IEnumerable<T> for display.
+Debug.Log(numbers.AsDisplayString()); // [4, -7, 12, 1, 0]
+
+// Return a shuffled copy, or shuffle the source list in place.
+var shuffled = numbers.Shuffled();
+numbers.Shuffle();
+
+// Remove and return the element at index 4.
+var poppedElement = numbers.Pop(4);
+
+// Remove two random elements; each tuple contains the element and its index before removal.
+var poppedElements = numbers.PopRandoms(2);
+
+// Remove all remaining elements from index 1 onward.
+numbers.RemoveFrom(1);
 ```
 
 And many other extensions! Read more on the <a href="https://github.com/KurbanismailovZaur/Extensions/wiki">wiki page</a>
