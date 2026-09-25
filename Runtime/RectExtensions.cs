@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class RectExtensions
     {
@@ -9,7 +9,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="center">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithCenter(this Rect rect, Vector2 center)
         {
             rect.center = center;
@@ -21,7 +21,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="position">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithPosition(this Rect rect, Vector2 position)
         {
             rect.position = position;
@@ -33,7 +33,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="height">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithHeight(this Rect rect, float height)
         {
             rect.height = height;
@@ -45,7 +45,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="width">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithWidth(this Rect rect, float width)
         {
             rect.width = width;
@@ -57,7 +57,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="max">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithMax(this Rect rect, Vector2 max)
         {
             rect.max = max;
@@ -69,7 +69,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="min">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithMin(this Rect rect, Vector2 min)
         {
             rect.min = min;
@@ -81,7 +81,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="size">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithSize(this Rect rect, Vector2 size)
         {
             rect.size = size;
@@ -93,7 +93,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="x">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithX(this Rect rect, float x)
         {
             rect.x = x;
@@ -101,11 +101,11 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Sets rect x position.
+        /// Sets rect y position.
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="y">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithY(this Rect rect, float y)
         {
             rect.y = y;
@@ -117,7 +117,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="xMax">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithXMax(this Rect rect, float xMax)
         {
             rect.xMax = xMax;
@@ -129,7 +129,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="xMin">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithXMin(this Rect rect, float xMin)
         {
             rect.xMin = xMin;
@@ -141,7 +141,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="yMax">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithYMax(this Rect rect, float yMax)
         {
             rect.yMax = yMax;
@@ -153,7 +153,7 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="rect">Target rect.</param>
         /// <param name="yMin">Value to set.</param>
-        /// <returns>Changed copy ot the <paramref name="rect"/></returns>
+        /// <returns>A modified copy of <paramref name="rect"/>.</returns>
         public static Rect WithYMin(this Rect rect, float yMin)
         {
             rect.yMin = yMin;

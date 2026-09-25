@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class RectTransformExtensions
     {
@@ -54,7 +54,7 @@ namespace Codomaster.Extensions
         public static void SetOffsetMinX(this RectTransform rectTransform, float x) => rectTransform.offsetMin = rectTransform.offsetMin.WithX(x);
 
         /// <summary>
-        /// Sets offset from left. The same as <b>SetOffsetMinX</b>.
+        /// Sets the left edge offset from the minimum anchor using <see cref="SetOffsetMinX"/>.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Offset value.</param>
@@ -68,7 +68,7 @@ namespace Codomaster.Extensions
         public static void SetOffsetMinY(this RectTransform rectTransform, float y) => rectTransform.offsetMin = rectTransform.offsetMin.WithY(y);
 
         /// <summary>
-        /// Sets offset from bottom. The same as <b>SetOffsetMinY</b>.
+        /// Sets the bottom edge offset from the minimum anchor using <see cref="SetOffsetMinY"/>.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="y">Offset value.</param>
@@ -82,7 +82,7 @@ namespace Codomaster.Extensions
         public static void SetOffsetMaxX(this RectTransform rectTransform, float x) => rectTransform.offsetMax = rectTransform.offsetMax.WithX(x);
 
         /// <summary>
-        /// Sets offset from right. The same as <b>SetOffsetMaxX</b>.
+        /// Sets the right edge offset from the maximum anchor using <see cref="SetOffsetMaxX"/>. A positive value moves the edge to the right.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Offset value.</param>
@@ -96,49 +96,49 @@ namespace Codomaster.Extensions
         public static void SetOffsetMaxY(this RectTransform rectTransform, float y) => rectTransform.offsetMax = rectTransform.offsetMax.WithY(y);
 
         /// <summary>
-        /// Sets offset from top. The same as <b>SetOffsetMaxY</b>.
+        /// Sets the top edge offset from the maximum anchor using <see cref="SetOffsetMaxY"/>. A positive value moves the edge up.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="y">Offset value.</param>
         public static void SetTop(this RectTransform rectTransform, float y) => SetOffsetMaxY(rectTransform, y);
 
         /// <summary>
-        /// Sets anchor position x value of the rectTransform.
+        /// Sets anchored position x value of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Value to set.</param>
         public static void SetAnchoredPositionX(this RectTransform rectTransform, float x) => rectTransform.anchoredPosition = rectTransform.anchoredPosition.WithX(x);
 
         /// <summary>
-        /// Sets anchor position y value of the rectTransform.
+        /// Sets anchored position y value of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
-        /// <param name="x">Value to set.</param>
+        /// <param name="y">Value to set.</param>
         public static void SetAnchoredPositionY(this RectTransform rectTransform, float y) => rectTransform.anchoredPosition = rectTransform.anchoredPosition.WithY(y);
 
         /// <summary>
-        /// Sets anchor position 3d x value of the rectTransform.
+        /// Sets anchored position 3D x value of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Value to set.</param>
         public static void SetAnchoredPosition3DX(this RectTransform rectTransform, float x) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithX(x);
 
         /// <summary>
-        /// Sets anchor position 3d y value of the rectTransform.
+        /// Sets anchored position 3D y value of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="y">Value to set.</param>
         public static void SetAnchoredPosition3DY(this RectTransform rectTransform, float y) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithY(y);
 
         /// <summary>
-        /// Sets anchor position 3d z value of the rectTransform.
+        /// Sets anchored position 3D z value of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="z">Value to set.</param>
         public static void SetAnchoredPosition3DZ(this RectTransform rectTransform, float z) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithZ(z);
 
         /// <summary>
-        /// Sets anchor position 3d x and y values of the rectTransform.
+        /// Sets anchored position 3D x and y values of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Value to set.</param>
@@ -146,14 +146,14 @@ namespace Codomaster.Extensions
         public static void SetAnchoredPosition3DXY(this RectTransform rectTransform, float x, float y) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithXY(x, y);
 
         /// <summary>
-        /// Sets anchor position 3d x and y values of the rectTransform.
+        /// Sets anchored position 3D x and y values of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="position">Position to set.</param>
         public static void SetAnchoredPosition3DXY(this RectTransform rectTransform, Vector2 position) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithXY(position.x, position.y);
 
         /// <summary>
-        /// Sets anchor position 3d x and z values of the rectTransform.
+        /// Sets anchored position 3D x and z values of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Value to set.</param>
@@ -161,14 +161,14 @@ namespace Codomaster.Extensions
         public static void SetAnchoredPosition3DXZ(this RectTransform rectTransform, float x, float z) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithXZ(x, z);
 
         /// <summary>
-        /// Sets anchor position 3d x and z values of the rectTransform.
+        /// Sets anchored position 3D x and z values of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="position">Position to set.</param>
         public static void SetAnchoredPosition3DXZ(this RectTransform rectTransform, Vector2 position) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithXZ(position.x, position.y);
 
         /// <summary>
-        /// Sets anchor position 3d y and z values of the rectTransform.
+        /// Sets anchored position 3D y and z values of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="y">Value to set.</param>
@@ -176,7 +176,7 @@ namespace Codomaster.Extensions
         public static void SetAnchoredPosition3DYZ(this RectTransform rectTransform, float y, float z) => rectTransform.anchoredPosition3D = rectTransform.anchoredPosition3D.WithYZ(y, z);
 
         /// <summary>
-        /// Sets anchor position 3d y and z values of the rectTransform.
+        /// Sets anchored position 3D y and z values of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="position">Position to set.</param>
@@ -193,50 +193,46 @@ namespace Codomaster.Extensions
         /// Sets pivot y value of the rectTransform.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
-        /// <param name="x">Value to set.</param>
+        /// <param name="y">Value to set.</param>
         public static void SetPivotY(this RectTransform rectTransform, float y) => rectTransform.pivot = rectTransform.pivot.WithY(y);
 
         /// <summary>
-        /// Sets pivot x value of the rectTransform without any changes min and max points.
+        /// Sets the pivot x component without moving the rectangle in world space.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Value to set.</param>
-        public static void SetPivotOnlyX(this RectTransform rectTransform, float x)
-        {
-            var deltaPercent = rectTransform.pivot.x - x;
-            rectTransform.SetPivotX(x);
-            rectTransform.SetAnchoredPositionX(rectTransform.anchoredPosition.x - rectTransform.sizeDelta.x * deltaPercent);
-        }
+        public static void SetPivotOnlyX(this RectTransform rectTransform, float x) => SetPivotOnly(rectTransform, new Vector2(x, rectTransform.pivot.y));
 
         /// <summary>
-        /// Sets pivot y value of the rectTransform without any changes min and max points.
+        /// Sets the pivot y component without moving the rectangle in world space.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="y">Value to set.</param>
-        public static void SetPivotOnlyY(this RectTransform rectTransform, float y)
-        {
-            var deltaPercent = rectTransform.pivot.y - y;
-            rectTransform.SetPivotY(y);
-            rectTransform.SetAnchoredPositionY(rectTransform.anchoredPosition.y - rectTransform.sizeDelta.y * deltaPercent);
-        }
+        public static void SetPivotOnlyY(this RectTransform rectTransform, float y) => SetPivotOnly(rectTransform, new Vector2(rectTransform.pivot.x, y));
 
         /// <summary>
-        /// Sets pivot value of the rectTransform without any changes min and max points.
+        /// Sets the pivot without moving the rectangle in world space, accounting for local rotation and scale.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="pivot">Value to set.</param>
-        public static void SetPivotOnly(this RectTransform rectTransform, Vector2 pivot) => SetPivotOnly(rectTransform, pivot.x, pivot.y);
+        public static void SetPivotOnly(this RectTransform rectTransform, Vector2 pivot)
+        {
+            var rect = rectTransform.rect;
+            var deltaPivot = pivot - rectTransform.pivot;
+            var offset = new Vector3(deltaPivot.x * rect.width, deltaPivot.y * rect.height, 0f);
+            var localPosition = rectTransform.localPosition
+                + rectTransform.localRotation * Vector3.Scale(offset, rectTransform.localScale);
+
+            rectTransform.pivot = pivot;
+            rectTransform.localPosition = localPosition;
+        }
 
         /// <summary>
-        /// Sets pivot x and y values of the rectTransform without any changes min and max points.
+        /// Sets the pivot x and y components without moving the rectangle in world space.
         /// </summary>
         /// <param name="rectTransform">Target rectTransform.</param>
         /// <param name="x">Value to set.</param>
         /// <param name="y">Value to set.</param>
-        public static void SetPivotOnly(this RectTransform rectTransform, float x, float y)
-        {
-            SetPivotOnlyX(rectTransform, x);
-            SetPivotOnlyY(rectTransform, y);
-        }
+        public static void SetPivotOnly(this RectTransform rectTransform, float x, float y) => SetPivotOnly(rectTransform, new Vector2(x, y));
     }
 }

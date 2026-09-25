@@ -1,28 +1,34 @@
 using System;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class IComparableExtensions
     {
         /// <summary>
-        /// Checks if the object is on the specified interval. 
+        /// Checks whether <paramref name="value"/> lies within the specified interval.
         /// </summary>
-        /// <typeparam name="T">Value type.</typeparam>
-        /// <param name="value">Target value.</param>
-        /// <param name="a">Interval's start value.</param>
-        /// <param name="b">Interval's end value.</param>
-        /// <param name="aInclusive">Is the beginning of the interval included?</param>
-        /// <param name="bInclusive">Is the end of the interval included?</param>
-        /// <returns><see langword="true"/> if the <paramref name="value"/> is between <paramref name="a"/> and <paramref name="b"/>.</returns>
+        /// <typeparam name="T">The type of the values to compare.</typeparam>
+        /// <remarks>Reversed endpoints are swapped together with their inclusion flags.</remarks>
+        /// <param name="value">The value to check.</param>
+        /// <param name="a">The first endpoint.</param>
+        /// <param name="b">The second endpoint.</param>
+        /// <param name="aInclusive">Whether to include the first endpoint.</param>
+        /// <param name="bInclusive">Whether to include the second endpoint.</param>
+        /// <returns><see langword="true"/> if the value lies within the interval with the specified endpoint inclusion; otherwise, <see langword="false"/>.</returns>
         public static bool IsBetween<T>(this T value, T a, T b, bool aInclusive = true, bool bInclusive = true) where T: IComparable
         {
-            if (a.CompareTo(b) == 1)
+            if (a.CompareTo(b) > 0)
             {
                 (a, b) = (b, a);
                 (aInclusive, bInclusive) = (bInclusive, aInclusive);
             }
 
-            return (aInclusive ? value.CompareTo(a).EqualsToAny(0, 1) : value.CompareTo(a) == 1) && (bInclusive ? value.CompareTo(b).EqualsToAny(-1, 0) : value.CompareTo(b) == -1);
+            int lower = value.CompareTo(a);
+            if (lower < 0 || (lower == 0 && !aInclusive))
+                return false;
+
+            int upper = value.CompareTo(b);
+            return upper < 0 || (upper == 0 && bInclusive);
         }
     }
 }

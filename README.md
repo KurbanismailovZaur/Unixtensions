@@ -1,4 +1,4 @@
-Extensions is a package that contains many extension methods for popular classes in Unity that you can use to write more expressive and concise code.
+Unixtensions is a package that contains many extension methods for popular classes in Unity that you can use to write more expressive and concise code.
 
 For example:
 ```C#

@@ -1,12 +1,13 @@
 {
+  "author": "\u0421odomaster",
+  "license": "MIT",
   "name": "com.codomaster.unixtensions",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "displayName": "Unixtensions",
-  "description": "This package contains a lot of extension methods for unity, which make developing more convenient.",
-  "unity": "2021.1",
-  "author": {
-    "name": "codomaster ",
-    "email": "codomaster.me@gmail.com",
-    "url": "https://t.me/codomaster"
-  }
+  "description": "The package contains a lot of extension methods for unity, which make code writing more convenient!",
+  "category": "Tools",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "unity": "6000.0",
+  "unityRelease": "0f1"
 }

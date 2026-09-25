@@ -2,17 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class Vector3Extensions
     {
         /// <summary>
-        /// Sets value to vector's axis.
+        /// Returns a copy of the vector with the selected component replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis">Axis index of the vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis">The component index, from 0 to 2.</param>
+        /// <param name="value">The value to assign to the corresponding component.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 With(this Vector3 vector, int axis, float value)
         {
             vector[axis] = value;
@@ -20,38 +20,38 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Sets value to vector's x axis.
+        /// Returns a copy of the vector with its x component replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The new x component value.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithX(this Vector3 vector, float x) => With(vector, 0, x);
 
         /// <summary>
-        /// Sets value to vector's y axis.
+        /// Returns a copy of the vector with its y component replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The new y component value.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithY(this Vector3 vector, float y) => With(vector, 1, y);
 
         /// <summary>
-        /// Sets value to vector's z axis.
+        /// Returns a copy of the vector with its z component replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="z">The new z component value.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithZ(this Vector3 vector, float z) => With(vector, 2, z);
 
         /// <summary>
-        /// Sets values to vector's axes.
+        /// Returns a copy of the vector with the selected components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis index of the vector.</param>
-        /// <param name="value1">First value to set.</param>
-        /// <param name="axis2">Second axis index of the vector.</param>
-        /// <param name="value2">Second value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The component index, from 0 to 2.</param>
+        /// <param name="value1">The value to assign to the corresponding component.</param>
+        /// <param name="axis2">The component index, from 0 to 2.</param>
+        /// <param name="value2">The value to assign to the corresponding component.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 With(this Vector3 vector, int axis1, float value1, int axis2, float value2)
         {
             vector[axis1] = value1;
@@ -61,92 +61,92 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Sets values to vector's x and y axis.
+        /// Returns a copy of the vector with its x and y components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="y">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The new x component value.</param>
+        /// <param name="y">The new y component value.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithXY(this Vector3 vector, float x, float y) => With(vector, 0, x, 1, y);
 
         /// <summary>
-        /// Sets value to vector's x and y axis.
+        /// Returns a copy of the vector with its x and y components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The x and y values to assign to the vector's x and y components, respectively.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithXY(this Vector3 vector, Vector2 value) => With(vector, 0, value.x, 1, value.y);
 
         /// <summary>
-        /// Sets value to vector's x and z axis.
+        /// Returns a copy of the vector with its x and z components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The new x component value.</param>
+        /// <param name="z">The new z component value.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithXZ(this Vector3 vector, float x, float z) => With(vector, 0, x, 2, z);
 
         /// <summary>
-        /// Sets value to vector's x and z axis.
+        /// Returns a copy of the vector with its x and z components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The x and y values to assign to the vector's x and z components, respectively.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithXZ(this Vector3 vector, Vector2 value) => With(vector, 0, value.x, 2, value.y);
 
         /// <summary>
-        /// Sets value to vector's y and z axis.
+        /// Returns a copy of the vector with its y and z components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The new y component value.</param>
+        /// <param name="z">The new z component value.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithYZ(this Vector3 vector, float y, float z) => With(vector, 1, y, 2, z);
 
         /// <summary>
-        /// Sets value to vector's y and z axis.
+        /// Returns a copy of the vector with its y and z components replaced.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The x and y values to assign to the vector's y and z components, respectively.</param>
+        /// <returns>The modified copy of the vector.</returns>
         public static Vector3 WithYZ(this Vector3 vector, Vector2 value) => With(vector, 1, value.x, 2, value.y);
 
         /// <summary>
-        /// Inverts value of specified axis.
+        /// Returns a copy of the vector with the selected component negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <param name="axis">Target axis.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis">The index of the component to negate, from 0 to 2.</param>
+        /// <returns>The vector with the specified component negated.</returns>
         public static Vector3 WithNegate(this Vector3 vector, int axis) => vector.With(axis, -vector[axis]);
 
         /// <summary>
-        /// Inverts x axis value.
+        /// Returns a copy of the vector with its x component negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified component negated.</returns>
         public static Vector3 WithNegateX(this Vector3 vector) => WithNegate(vector, 0);
 
         /// <summary>
-        /// Inverts y axis value.
+        /// Returns a copy of the vector with its y component negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified component negated.</returns>
         public static Vector3 WithNegateY(this Vector3 vector) => WithNegate(vector, 1);
 
         /// <summary>
-        /// Inverts z axis value.
+        /// Returns a copy of the vector with its z component negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified component negated.</returns>
         public static Vector3 WithNegateZ(this Vector3 vector) => WithNegate(vector, 2);
 
         /// <summary>
-        /// Inverts values of specified axes.
+        /// Returns a copy of the vector with the selected components negated in order.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the component to negate, from 0 to 2.</param>
+        /// <param name="axis2">The index of the component to negate, from 0 to 2.</param>
+        /// <returns>The vector with the specified components negated.</returns>
         public static Vector3 WithNegate(this Vector3 vector, int axis1, int axis2)
         {
             vector[axis1] = -vector[axis1];
@@ -156,159 +156,159 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Inverts x and y axes values.
+        /// Returns a copy of the vector with its x and y components negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified components negated.</returns>
         public static Vector3 WithNegateXY(this Vector3 vector) => vector.WithNegate(0, 1);
 
         /// <summary>
-        /// Inverts x and z axes values.
+        /// Returns a copy of the vector with its x and z components negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified components negated.</returns>
         public static Vector3 WithNegateXZ(this Vector3 vector) => vector.WithNegate(0, 2);
 
         /// <summary>
-        /// Inverts y and z axes values.
+        /// Returns a copy of the vector with its y and z components negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified components negated.</returns>
         public static Vector3 WithNegateYZ(this Vector3 vector) => vector.WithNegate(1, 2);
 
         /// <summary>
-        /// Inverts vector.
+        /// Returns a vector with every component negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Inverted vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with the specified components negated.</returns>
         public static Vector3 Negate(this Vector3 vector) => new(-vector.x, -vector.y, -vector.z);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by axes.
+        /// Creates a vector from the selected components in the specified order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The source component index, from 0 to 2.</param>
+        /// <param name="axis2">The source component index, from 0 to 2.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 Get(this Vector3 vector, int axis1, int axis2) => new(vector[axis1], vector[axis2]);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by x and y axes.
+        /// Creates a vector whose components are in XY order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 GetXY(this Vector3 vector) => Get(vector, 0, 1);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by x and z axes.
+        /// Creates a vector whose components are in XZ order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 GetXZ(this Vector3 vector) => Get(vector, 0, 2);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by y and x axes.
+        /// Creates a vector whose components are in YX order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 GetYX(this Vector3 vector) => Get(vector, 1, 0);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by y and z axes.
+        /// Creates a vector whose components are in YZ order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 GetYZ(this Vector3 vector) => Get(vector, 1, 2);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by z and x axes.
+        /// Creates a vector whose components are in ZX order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 GetZX(this Vector3 vector) => Get(vector, 2, 0);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by z and y axes.
+        /// Creates a vector whose components are in ZY order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector2"/>.</returns>
         public static Vector2 GetZY(this Vector3 vector) => Get(vector, 2, 1);
 
         /// <summary>
-        /// Gets vector with swapped axes.
+        /// Creates a vector from the selected components in the specified order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <param name="axis2">Third axis.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The source component index, from 0 to 2.</param>
+        /// <param name="axis2">The source component index, from 0 to 2.</param>
+        /// <param name="axis3">The source component index, from 0 to 2.</param>
+        /// <returns>The resulting <see cref="Vector3"/>.</returns>
         public static Vector3 Get(this Vector3 vector, int axis1, int axis2, int axis3) => new(vector[axis1], vector[axis2], vector[axis3]);
 
         /// <summary>
-        /// Gets vector with order XZY.
+        /// Creates a vector whose components are in XZY order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector3"/>.</returns>
         public static Vector3 GetXZY(this Vector3 vector) => Get(vector, 0, 2, 1);
 
         /// <summary>
-        /// Gets vector with order YXZ.
+        /// Creates a vector whose components are in YXZ order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector3"/>.</returns>
         public static Vector3 GetYXZ(this Vector3 vector) => Get(vector, 1, 0, 2);
 
         /// <summary>
-        /// Gets vector with order YZX.
+        /// Creates a vector whose components are in YZX order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector3"/>.</returns>
         public static Vector3 GetYZX(this Vector3 vector) => Get(vector, 1, 2, 0);
 
         /// <summary>
-        /// Gets vector with order ZXY.
+        /// Creates a vector whose components are in ZXY order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector3"/>.</returns>
         public static Vector3 GetZXY(this Vector3 vector) => Get(vector, 2, 0, 1);
 
         /// <summary>
-        /// Gets vector with order ZYX.
+        /// Creates a vector whose components are in ZYX order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The resulting <see cref="Vector3"/>.</returns>
         public static Vector3 GetZYX(this Vector3 vector) => Get(vector, 2, 1, 0);
 
         /// <summary>
-        /// Inserts value to x axis and extends vector to 4-dimensional.
+        /// Creates a <see cref="Vector4"/> by inserting a value at the x component and preserving the order of the original components.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to insert.</param>
+        /// <returns>The resulting <see cref="Vector4"/>.</returns>
         public static Vector4 InsertX(this Vector3 vector, float x = 0) => new(x, vector.x, vector.y, vector.z);
 
         /// <summary>
-        /// Inserts value to y axis and extends vector to 4-dimensional.
+        /// Creates a <see cref="Vector4"/> by inserting a value at the y component and preserving the order of the original components.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The value to insert.</param>
+        /// <returns>The resulting <see cref="Vector4"/>.</returns>
         public static Vector4 InsertY(this Vector3 vector, float y = 0) => new(vector.x, y, vector.y, vector.z);
 
         /// <summary>
-        /// Inserts value to z axis and extends vector to 4-dimensional.
+        /// Creates a <see cref="Vector4"/> by inserting a value at the z component and preserving the order of the original components.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="z">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="z">The value to insert.</param>
+        /// <returns>The resulting <see cref="Vector4"/>.</returns>
         public static Vector4 InsertZ(this Vector3 vector, float z = 0) => new(vector.x, vector.y, z, vector.z);
 
         /// <summary>
-        /// Inserts value to w axis and extends vector to 4-dimensional.
+        /// Creates a <see cref="Vector4"/> by inserting a value at the w component and preserving the order of the original components.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="w">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="w">The value to insert.</param>
+        /// <returns>The resulting <see cref="Vector4"/>.</returns>
         public static Vector4 InsertW(this Vector3 vector, float w = 0) => new(vector.x, vector.y, vector.z, w);
 
         private static void Compare(Vector3 vector, ref int index, int compareIndex, int result)
@@ -328,10 +328,10 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Gets max component from vector.
+        /// Gets the index and value of the vector's largest component.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Vector's max component tuple info.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The zero-based index and value of the largest component.</returns>
         public static (int index, float value) MaxComponent(this Vector3 vector)
         {
             var index = CompareAllComponents(vector, 1);
@@ -339,10 +339,10 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Gets min component from vector.
+        /// Gets the index and value of the vector's smallest component.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Vector's min component tuple info.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The zero-based index and value of the smallest component.</returns>
         public static (int index, float value) MinComponent(this Vector3 vector) 
         {
             var index = CompareAllComponents(vector, -1);
@@ -350,73 +350,73 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Remaps all vector's components from one interval to other.
+        /// Linearly maps each component from one range to another without clamping.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="min1">Min value of the beginning interval.</param>
-        /// <param name="max1">Max value of the beginning interval.</param>
-        /// <param name="min2">Min value of the target interval.</param>
-        /// <param name="max2">Max value of the target interval.</param>
-        /// <returns>Remaped vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="min1">The start of the source range.</param>
+        /// <param name="max1">The end of the source range.</param>
+        /// <param name="min2">The start of the target range.</param>
+        /// <param name="max2">The end of the target range.</param>
+        /// <returns>The vector with remapped components.</returns>
         public static Vector3 Remap(this Vector3 vector, float min1, float max1, float min2, float max2)
         {
             return new Vector3(vector.x.Remap(min1, max1, min2, max2), vector.y.Remap(min1, max1, min2, max2), vector.z.Remap(min1, max1, min2, max2));
         }
 
         /// <summary>
-        /// Creates new vector with absolute components.
+        /// Creates a vector containing the absolute value of each component.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Vector with absolute components.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with absolute component values.</returns>
         public static Vector3 Abs(this Vector3 vector) => new(Mathf.Abs(vector.x), Mathf.Abs(vector.y), Mathf.Abs(vector.z));
 
         /// <summary>
-        /// Creates new vector with clamped components.
+        /// Clamps each component to the specified range.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="min">The minimum floating value to campare agains.</param>
-        /// <param name="max">The maximum floating value to campare agains.</param>
-        /// <returns>Clamped vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="min">The lower bound for each component.</param>
+        /// <param name="max">The upper bound for each component.</param>
+        /// <returns>The vector with clamped components.</returns>
         public static Vector3 Clamp(this Vector3 vector, float min, float max)
         {
             return new Vector3(Mathf.Clamp(vector.x, min, max), Mathf.Clamp(vector.y, min, max), Mathf.Clamp(vector.z, min, max));
         }
 
         /// <summary>
-        /// Creates and returns a vector whose components are limited to 0 and 1.
+        /// Clamps each component to the inclusive range from 0 to 1.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Clamped vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The vector with clamped components.</returns>
         public static Vector3 Clamp01(this Vector3 vector)
         {
             return new Vector3(Mathf.Clamp01(vector.x), Mathf.Clamp01(vector.y), Mathf.Clamp01(vector.z));
         }
 
         /// <summary>
-        /// Creates and returns a vector whose components are divided by the value.
+        /// Divides each component by the corresponding component of <paramref name="other"/>.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="other">Vector on which divide</param>
-        /// <returns>Divided vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="other">The vector containing the divisors.</param>
+        /// <returns>The vector containing the component-wise quotients.</returns>
         public static Vector3 Divide(this Vector3 vector, Vector3 other)
         {
             return new Vector3(vector.x / other.x, vector.y / other.y, vector.z / other.z);
         }
 
         /// <summary>
-        /// Checks if the vector components are equals.
+        /// Checks whether adjacent vector components are approximately equal.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see langword="true"/> if vector's components are equals.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns><see langword="true"/> if each adjacent pair is approximately equal; otherwise, <see langword="false"/>.</returns>
         public static bool IsUniform(this Vector3 vector) => vector.x.Approx(vector.y) && vector.y.Approx(vector.z);
 
         /// <summary>
-        /// Calculate evently distributed point position on sphere.
+        /// Calculates one point of a roughly evenly distributed set on a sphere centered at the origin.
         /// </summary>
-        /// <param name="index">Index of point.</param>
-        /// <param name="radius">Radius of the sphere.</param>
-        /// <param name="count">Total count of points in sphere.</param>
-        /// <returns>Calculated evently distributed point.</returns>
+        /// <param name="index">The zero-based point index, less than the total point count.</param>
+        /// <param name="radius">The sphere radius.</param>
+        /// <param name="count">The total number of points, which must be positive.</param>
+        /// <returns>The calculated point.</returns>
         public static Vector3 EventlyDistributedPointOnSphere(int index, float radius, int count)
         {
             var k = index + 0.5f;
@@ -430,50 +430,43 @@ namespace Codomaster.Extensions
             return new Vector3(x, y, z) * radius;
         }
 
-        /// <summary>
-        /// Get the closest point on a ray.
-        /// </summary>
-        /// <param name="point">A point in space.</param>
-        /// <param name="origin">Start point of ray.</param>
-        /// <param name="direction">Ray direction. Must be normalized.</param>
-        /// <returns>Tuple which contains closest point on line and distance from <paramref name="origin"/> to calculated point.</returns>
 
         /// <summary>
-        /// Gets closest point info from <paramref name="points"/> list.
+        /// Finds the point in <paramref name="points"/> closest to <paramref name="point"/>.
         /// </summary>
-        /// <param name="point">Origin point.</param>
-        /// <param name="points">Compared points.</param>
-        /// <returns>Closest point tuple info.</returns>
+        /// <param name="point">The reference point.</param>
+        /// <param name="points">The candidate points, in index order.</param>
+        /// <returns>The closest point and its zero-based index; (<see cref="Vector3.zero"/>, -1) for an empty list.</returns>
         public static (Vector3 point, int index) GetClosestPoint(this Vector3 point, params Vector3[] points)
         {
-            return GetClosestPoint(point, (IEnumerable<Vector3>)points);
+            return GetClosestPoint(point, (IList<Vector3>)points);
         }
 
         /// <summary>
-        /// Gets closest point info from <paramref name="points"/> list.
+        /// Finds the point in <paramref name="points"/> closest to <paramref name="point"/>.
         /// </summary>
-        /// <param name="point">Origin point.</param>
-        /// <param name="points">Compared points.</param>
-        /// <returns>Closest point tuple info.</returns>
-        public static (Vector3 point, int index) GetClosestPoint(this Vector3 point, IEnumerable<Vector3> points)
+        /// <param name="point">The reference point.</param>
+        /// <param name="points">The candidate points, in index order.</param>
+        /// <returns>The closest point and its zero-based index; (<see cref="Vector3.zero"/>, -1) for an empty list.</returns>
+        public static (Vector3 point, int index) GetClosestPoint(this Vector3 point, IList<Vector3> points)
         {
-            var enumerator = points.GetEnumerator();
-
-            var index = -1;
             var closestIndex = -1;
             var closestPoint = Vector3.zero;
-            var closestDistance = float.MaxValue;
+            var closestSquaredDistance = double.PositiveInfinity;
 
-            while (enumerator.MoveNext())
+            for (var index = 0; index < points.Count; index++)
             {
-                ++index;
-                var distance = Vector3.Distance(point, enumerator.Current);
+                var candidate = points[index];
+                var dx = (double)point.x - candidate.x;
+                var dy = (double)point.y - candidate.y;
+                var dz = (double)point.z - candidate.z;
+                var squaredDistance = dx * dx + dy * dy + dz * dz;
 
-                if (distance < closestDistance)
+                if (squaredDistance < closestSquaredDistance)
                 {
                     closestIndex = index;
-                    closestDistance = distance;
-                    closestPoint = enumerator.Current;
+                    closestSquaredDistance = squaredDistance;
+                    closestPoint = candidate;
                 }
             }
 
@@ -481,102 +474,132 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Get the closest point on a ray.
+        /// Finds the closest point on the infinite line defined by the ray.
         /// </summary>
-        /// <param name="point">A point in space.</param>
-        /// <param name="origin">Start point of ray.</param>
-        /// <param name="direction">Ray direction. Must be normalized.</param>
-        /// <returns>Tuple which contains closest point on line and distance from <paramref name="origin"/> to calculated point.</returns>
+        /// <remarks>The projection is not clamped to the ray's forward half-line; the distance may be negative.</remarks>
+        /// <param name="point">The point to project.</param>
+        /// <param name="origin">The line's reference point.</param>
+        /// <param name="direction">The line direction, which must be normalized.</param>
+        /// <returns>The closest point on the line and its signed distance along the direction from the ray's origin.</returns>
         public static (Vector3 point, float distance) GetClosestPointOnRay(this Vector3 point, Vector3 origin, Vector3 direction)
         {
-            var distance = Vector3.Dot(point - origin, direction);
-            return (origin + direction * distance, distance);
+            var distance = ((double)point.x - origin.x) * direction.x
+                         + ((double)point.y - origin.y) * direction.y
+                         + ((double)point.z - origin.z) * direction.z;
+            var closestPoint = new Vector3(
+                (float)(origin.x + direction.x * distance),
+                (float)(origin.y + direction.y * distance),
+                (float)(origin.z + direction.z * distance));
+            return (closestPoint, (float)distance);
         }
 
         /// <summary>
-        /// Get the closest point on a ray.
+        /// Finds the closest point on the infinite line defined by the ray.
         /// </summary>
-        /// <param name="point">A point in space.</param>
-        /// <param name="origin">Start point of ray.</param>
-        /// <param name="direction">Ray direction. Must be normalized.</param>
-        /// <returns>Tuple which contains closest point on line and distance from <paramref name="origin"/> to calculated point.</returns>
+        /// <remarks>The projection is not clamped to the ray's forward half-line; the distance may be negative.</remarks>
+        /// <param name="point">The point to project.</param>
+        /// <param name="ray">The ray defining the line.</param>
+        /// <returns>The closest point on the line and its signed distance along the direction from the ray's origin.</returns>
         public static (Vector3 point, float distance) GetClosestPointOnRay(this Vector3 point, Ray ray)
         {
-            var distance = Vector3.Dot(point - ray.origin, ray.direction);
-            return (ray.origin + ray.direction * distance, distance);
+            return GetClosestPointOnRay(point, ray.origin, ray.direction);
         }
 
         /// <summary>
-        /// Get the closest point on a line segment.
+        /// Finds the closest point on the line segment.
         /// </summary>
-        /// <param name="point">A point in space.</param>
-        /// <param name="start">Start of line segment.</param>
-        /// <param name="end">End of line segment.</param>
-        /// <returns>Tuple which contains closest point on line and distance from <paramref name="start"/> to calculated point.</returns>
+        /// <param name="point">The point to project.</param>
+        /// <param name="start">The start of the segment.</param>
+        /// <param name="end">The end of the segment.</param>
+        /// <returns>The closest point on the segment and the distance along the segment from <paramref name="start"/> to that point.</returns>
 
         public static (Vector3 point, float distance) GetClosestPointOnSegment(this Vector3 point, Vector3 start, Vector3 end)
         {
-            Vector3 direction = end - start;
-            float lineMagnitude = direction.magnitude;
-            direction.Normalize();
+            var dx = (double)end.x - start.x;
+            var dy = (double)end.y - start.y;
+            var dz = (double)end.z - start.z;
+            var squaredLength = dx * dx + dy * dy + dz * dz;
 
-            var distance = Mathf.Clamp(Vector3.Dot(point - start, direction), 0f, lineMagnitude);
-            return (start + direction * distance, distance);
+            if (squaredLength == 0d)
+                return (start, 0f);
+
+            var t = (((double)point.x - start.x) * dx
+                   + ((double)point.y - start.y) * dy
+                   + ((double)point.z - start.z) * dz) / squaredLength;
+
+            if (t <= 0d)
+                return (start, 0f);
+
+            var length = System.Math.Sqrt(squaredLength);
+            if (t >= 1d)
+                return (end, (float)length);
+
+            var closestPoint = new Vector3(
+                (float)((1d - t) * start.x + t * end.x),
+                (float)((1d - t) * start.y + t * end.y),
+                (float)((1d - t) * start.z + t * end.z));
+            return (closestPoint, (float)(t * length));
         }
 
         /// <summary>
-        /// Arbitrarily deviates the direction vector by a given <paramref name="angle"/>.
+        /// Creates a randomly deflected unit direction using bounded yaw and pitch offsets.
         /// </summary>
-        /// <param name="direction">Target vector.</param>
-        /// <param name="angle">Angle on which vector will be deflected.</param>
-        /// <returns>Deflected directional vector.</returns>
-        public static Vector3 RandomDeflected(this Vector3 direction, float angle) => RandomDeflected(direction, new Vector2(angle, angle), Vector3.up);
+        /// <remarks>Uses <see cref="Vector3.up"/> to orient the local frame.</remarks>
+        /// <param name="direction">The direction to deflect.</param>
+        /// <param name="angle">The maximum absolute yaw and pitch offsets, in degrees.</param>
+        /// <returns>The deflected unit direction.</returns>
+        public static Vector3 WithRandomDeflection(this Vector3 direction, float angle) => WithRandomDeflection(direction, new Vector2(angle, angle), Vector3.up);
 
         /// <summary>
-        /// Arbitrarily deviates the direction vector by a given <paramref name="angle"/>, taking into account the <paramref name="up"/> axis.
+        /// Creates a randomly deflected unit direction using bounded yaw and pitch offsets.
         /// </summary>
-        /// <param name="direction">Target vector.</param>
-        /// <param name="angle">Angle on which vector will be deflected.</param>
-        /// <param name="up">Up axis.</param>
-        /// <returns>Deflected directional vector.</returns>
-        public static Vector3 RandomDeflected(this Vector3 direction, float angle, Vector3 up) => RandomDeflected(direction, new Vector2(angle, angle), up);
+        /// <param name="direction">The direction to deflect.</param>
+        /// <param name="angle">The maximum absolute yaw and pitch offsets, in degrees.</param>
+        /// <param name="up">The up direction used to orient the local frame.</param>
+        /// <returns>The deflected unit direction.</returns>
+        public static Vector3 WithRandomDeflection(this Vector3 direction, float angle, Vector3 up) => WithRandomDeflection(direction, new Vector2(angle, angle), up);
 
         /// <summary>
-        /// Arbitrarily deviates the direction vector by a given <paramref name="angleX"/> and <paramref name="angleY"/>.
+        /// Creates a randomly deflected unit direction using bounded yaw and pitch offsets.
         /// </summary>
-        /// <param name="direction">Target vector.</param>
-        /// <param name="angleX">Angle on which vector will be deflected by X axis.</param>
-        /// <param name="angleY">Angle on which vector will be deflected by Y axis.</param>
-        /// <returns>Deflected directional vector.</returns>
-        public static Vector3 RandomDeflected(this Vector3 direction, float angleX, float angleY) => RandomDeflected(direction, new Vector2(angleX, angleY), Vector3.up);
+        /// <remarks>Uses <see cref="Vector3.up"/> to orient the local frame.</remarks>
+        /// <param name="direction">The direction to deflect.</param>
+        /// <param name="angleX">The maximum absolute yaw offset around the local y axis, in degrees.</param>
+        /// <param name="angleY">The maximum absolute pitch offset around the local x axis, in degrees.</param>
+        /// <returns>The deflected unit direction.</returns>
+        public static Vector3 WithRandomDeflection(this Vector3 direction, float angleX, float angleY) => WithRandomDeflection(direction, new Vector2(angleX, angleY), Vector3.up);
 
         /// <summary>
-        /// Arbitrarily deviates the direction vector by a given <paramref name="angleX"/> and <paramref name="angleY"/>, taking into account the <paramref name="up"/> axis.
+        /// Creates a randomly deflected unit direction using bounded yaw and pitch offsets.
         /// </summary>
-        /// <param name="direction">Target vector.</param>
-        /// <param name="angleX">Angle on which vector will be deflected by X axis.</param>
-        /// <param name="angleY">Angle on which vector will be deflected by Y axis.</param>
-        /// <param name="up">Up axis.</param>
-        /// <returns>Deflected directional vector.</returns>
-        public static Vector3 RandomDeflected(this Vector3 direction, float angleX, float angleY, Vector3 up) => RandomDeflected(direction, new Vector2(angleX, angleY), up);
+        /// <param name="direction">The direction to deflect.</param>
+        /// <param name="angleX">The maximum absolute yaw offset around the local y axis, in degrees.</param>
+        /// <param name="angleY">The maximum absolute pitch offset around the local x axis, in degrees.</param>
+        /// <param name="up">The up direction used to orient the local frame.</param>
+        /// <returns>The deflected unit direction.</returns>
+        public static Vector3 WithRandomDeflection(this Vector3 direction, float angleX, float angleY, Vector3 up) => WithRandomDeflection(direction, new Vector2(angleX, angleY), up);
 
         /// <summary>
-        /// Arbitrarily deviates the direction vector by a given <paramref name="angles"/>.
+        /// Creates a randomly deflected unit direction using bounded yaw and pitch offsets.
         /// </summary>
-        /// <param name="direction">Target vector.</param>
-        /// <param name="angles">Angles on which vector will be deflected by X and Y axes.</param>
-        /// <returns>Deflected directional vector.</returns>
-        public static Vector3 RandomDeflected(this Vector3 direction, Vector2 angles) => RandomDeflected(direction, angles, Vector3.up);
+        /// <remarks>Uses <see cref="Vector3.up"/> to orient the local frame.</remarks>
+        /// <param name="direction">The direction to deflect.</param>
+        /// <param name="angles">The maximum absolute yaw (x) and pitch (y) offsets, in degrees.</param>
+        /// <returns>The deflected unit direction.</returns>
+        public static Vector3 WithRandomDeflection(this Vector3 direction, Vector2 angles) => WithRandomDeflection(direction, angles, Vector3.up);
 
         /// <summary>
-        /// Arbitrarily deviates the direction vector by a given <paramref name="angles"/>, taking into account the <paramref name="up"/> axis.
+        /// Creates a randomly deflected unit direction using bounded yaw and pitch offsets.
         /// </summary>
-        /// <param name="direction">Target vector.</param>
-        /// <param name="angles">Angles on which vector will be deflected by X and Y axes.</param>
-        /// <param name="up">Up axis.</param>
-        /// <returns>Deflected directional vector.</returns>
-        public static Vector3 RandomDeflected(this Vector3 direction, Vector2 angles, Vector3 up)
+        /// <param name="direction">The direction to deflect.</param>
+        /// <param name="angles">The maximum absolute yaw (x) and pitch (y) offsets, in degrees.</param>
+        /// <param name="up">The up direction used to orient the local frame.</param>
+        /// <returns>The deflected unit direction.</returns>
+        public static Vector3 WithRandomDeflection(this Vector3 direction, Vector2 angles, Vector3 up)
         {
+            if (direction.sqrMagnitude == 0f)
+                return direction;
+
             var randomAngles = Random.insideUnitCircle;
             randomAngles.Scale(angles);
 

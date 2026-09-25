@@ -1,3 +1,13 @@
+# v2.0.0
+### Breaking changes and improvements.
+
+- Renamed the package to `com.codomaster.unixtensions`, assembly and namespace to `Unixtensions`; moved scripts to `Runtime`.
+- Unity 6 is now required. Switched to the MIT license.
+- Moved random selection, shuffling and `MinBy`/`MaxBy` helpers to `IList<T>`.
+- Renamed `AsString` to `AsDisplayString` and `RemoveRange(index)` to `RemoveFrom(index)`.
+- Removed most camera setters, `CanvasScalerExtensions`, `SceneReference`, the missing-script editor utility, and indexed `With` overloads for colors and quaternions.
+- Reduced runtime allocations, fixed numeric and layer-mask helpers, and improved API documentation.
+
 # v1.1.0
 ### Fixes and new methods.
 - `GetRandomElement` methods renamed to `GetRandom`. 

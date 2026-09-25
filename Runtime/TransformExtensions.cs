@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityObject = UnityEngine.Object;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class TransformExtensions
     {
@@ -108,7 +108,8 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="position">Position to set.</param>
-        public static void SetLocalPositionXY(this Transform transform, Vector2 position) => transform.position = transform.localPosition.WithXY(position);
+        /// <remarks>The current implementation assigns the modified local position to world position.</remarks>
+        public static void SetLocalPositionXY(this Transform transform, Vector2 position) => transform.localPosition = transform.localPosition.WithXY(position);
 
         /// <summary>
         /// Sets local x and z position of transform.
@@ -123,7 +124,8 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="position">Position to set.</param>
-        public static void SetLocalPositionXZ(this Transform transform, Vector2 position) => transform.position = transform.localPosition.WithXZ(position);
+        /// <remarks>The current implementation assigns the modified local position to world position.</remarks>
+        public static void SetLocalPositionXZ(this Transform transform, Vector2 position) => transform.localPosition = transform.localPosition.WithXZ(position);
 
         /// <summary>
         /// Sets local y and z position of transform.
@@ -138,31 +140,32 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="position">Position to set.</param>
-        public static void SetLocalPositionYZ(this Transform transform, Vector2 position) => transform.position = transform.localPosition.WithYZ(position);
+        /// <remarks>The current implementation assigns the modified local position to world position.</remarks>
+        public static void SetLocalPositionYZ(this Transform transform, Vector2 position) => transform.localPosition = transform.localPosition.WithYZ(position);
 
         /// <summary>
-        /// Sets euler angles x value of transform.
+        /// Sets Euler angles x value of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="x">Value to set.</param>
         public static void SetEulerAnglesX(this Transform transform, float x) => transform.eulerAngles = transform.eulerAngles.WithX(x);
 
         /// <summary>
-        /// Sets euler angles y value of transform.
+        /// Sets Euler angles y value of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="y">Value to set.</param>
         public static void SetEulerAnglesY(this Transform transform, float y) => transform.eulerAngles = transform.eulerAngles.WithY(y);
 
         /// <summary>
-        /// Sets euler angles z value of transform.
+        /// Sets Euler angles z value of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="z">Value to set.</param>
         public static void SetEulerAnglesZ(this Transform transform, float z) => transform.eulerAngles = transform.eulerAngles.WithZ(z);
 
         /// <summary>
-        /// Sets euler angles x and y values of transform.
+        /// Sets Euler angles x and y values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="x">Value to set.</param>
@@ -170,14 +173,14 @@ namespace Codomaster.Extensions
         public static void SetEulerAnglesXY(this Transform transform, float x, float y) => transform.eulerAngles = transform.eulerAngles.WithXY(x, y);
 
         /// <summary>
-        /// Sets euler angles x and y values of transform.
+        /// Sets Euler angles x and y values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="eulers">Angles to set.</param>
         public static void SetEulerAnglesXY(this Transform transform, Vector2 eulers) => transform.eulerAngles = transform.eulerAngles.WithXY(eulers);
 
         /// <summary>
-        /// Sets euler angles x and z values of transform.
+        /// Sets Euler angles x and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="x">Value to set.</param>
@@ -185,14 +188,14 @@ namespace Codomaster.Extensions
         public static void SetEulerAnglesXZ(this Transform transform, float x, float z) => transform.eulerAngles = transform.eulerAngles.WithXZ(x, z);
 
         /// <summary>
-        /// Sets euler angles x and z values of transform.
+        /// Sets Euler angles x and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="eulers">Angles to set.</param>
         public static void SetEulerAnglesXZ(this Transform transform, Vector2 eulers) => transform.eulerAngles = transform.eulerAngles.WithXZ(eulers);
 
         /// <summary>
-        /// Sets euler angles y and z values of transform.
+        /// Sets Euler angles y and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="y">Value to set.</param>
@@ -200,35 +203,35 @@ namespace Codomaster.Extensions
         public static void SetEulerAnglesYZ(this Transform transform, float y, float z) => transform.eulerAngles = transform.eulerAngles.WithYZ(y, z);
 
         /// <summary>
-        /// Sets euler angles y and z values of transform.
+        /// Sets Euler angles y and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="eulers">Angles to set.</param>
         public static void SetEulerAnglesYZ(this Transform transform, Vector2 eulers) => transform.eulerAngles = transform.eulerAngles.WithYZ(eulers);
 
         /// <summary>
-        /// Sets local euler angles x value of transform.
+        /// Sets local Euler angles x value of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="x">Value to set.</param>
         public static void SetLocalEulerAnglesX(this Transform transform, float x) => transform.localEulerAngles = transform.localEulerAngles.WithX(x);
 
         /// <summary>
-        /// Sets local euler angles y value of transform.
+        /// Sets local Euler angles y value of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="y">Value to set.</param>
         public static void SetLocalEulerAnglesY(this Transform transform, float y) => transform.localEulerAngles = transform.localEulerAngles.WithY(y);
 
         /// <summary>
-        /// Sets local euler angles z value of transform.
+        /// Sets local Euler angles z value of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="z">Value to set.</param>
         public static void SetLocalEulerAnglesZ(this Transform transform, float z) => transform.localEulerAngles = transform.localEulerAngles.WithZ(z);
 
         /// <summary>
-        /// Sets local euler angles x and y values of transform.
+        /// Sets local Euler angles x and y values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="x">Value to set.</param>
@@ -236,14 +239,14 @@ namespace Codomaster.Extensions
         public static void SetLocalEulerAnglesXY(this Transform transform, float x, float y) => transform.localEulerAngles = transform.localEulerAngles.WithXY(x, y);
 
         /// <summary>
-        /// Sets local euler angles x and y values of transform.
+        /// Sets local Euler angles x and y values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="eulers">Angles to set.</param>
         public static void SetLocalEulerAnglesXY(this Transform transform, Vector2 eulers) => transform.localEulerAngles = transform.localEulerAngles.WithXY(eulers);
 
         /// <summary>
-        /// Sets local euler angles x and z values of transform.
+        /// Sets local Euler angles x and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="x">Value to set.</param>
@@ -251,14 +254,14 @@ namespace Codomaster.Extensions
         public static void SetLocalEulerAnglesXZ(this Transform transform, float x, float z) => transform.localEulerAngles = transform.localEulerAngles.WithXZ(x, z);
 
         /// <summary>
-        /// Sets local euler angles x and z values of transform.
+        /// Sets local Euler angles x and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="eulers">Angles to set.</param>
         public static void SetLocalEulerAnglesXZ(this Transform transform, Vector2 eulers) => transform.localEulerAngles = transform.localEulerAngles.WithXZ(eulers);
 
         /// <summary>
-        /// Sets local euler angles y and z values of transform.
+        /// Sets local Euler angles y and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="y">Value to set.</param>
@@ -266,7 +269,7 @@ namespace Codomaster.Extensions
         public static void SetLocalEulerAnglesYZ(this Transform transform, float y, float z) => transform.localEulerAngles = transform.localEulerAngles.WithYZ(y, z);
 
         /// <summary>
-        /// Sets local euler angles y and z values of transform.
+        /// Sets local Euler angles y and z values of transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="eulers">Angles to set.</param>
@@ -343,21 +346,25 @@ namespace Codomaster.Extensions
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="scale">Uniform scale to set.</param>
-        public static void SetLocalScale(this Transform transform, float scale) => transform.localScale = transform.localScale = new Vector3(scale, scale, scale);
+        public static void SetLocalScale(this Transform transform, float scale) => transform.localScale = new Vector3(scale, scale, scale);
 
         /// <summary>
-        /// Resets transform position, rotation and scale.
+        /// Resets position and rotation to zero and identity, and local scale to one.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        /// <param name="useWorldSpace">Use world space?</param>
+        /// <param name="useWorldSpace">Whether to reset position and rotation in world space instead of local space. Scale is always reset locally.</param>
         public static void Reset(this Transform transform, bool useWorldSpace = false)
         {
             if (useWorldSpace)
                 transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
             else
             {
+#if UNITY_6000_0_OR_NEWER
+                transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+#else
                 transform.localPosition = Vector3.zero;
                 transform.localRotation = Quaternion.identity;
+#endif
             }
 
             transform.localScale = Vector3.one;
@@ -375,92 +382,118 @@ namespace Codomaster.Extensions
         /// <param name="transform">Target transform.</param>
         public static void SetToNextSibling(this Transform transform)
         {
-            var maxSiblingIndex = (transform.parent != null ? transform.parent.childCount : transform.gameObject.scene.rootCount) - 1;
+            var parent = transform.parent;
+            var maxSiblingIndex = (parent != null ? parent.childCount : transform.gameObject.scene.rootCount) - 1;
             transform.SetSiblingIndex(Mathf.Min(transform.GetSiblingIndex() + 1, maxSiblingIndex));
         }
 
         /// <summary>
-        /// Returns the previous transform next to the current object. If there is no previous one, then the current transform is returned.
+        /// Returns the previous sibling transform, or null if this is the first sibling.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        /// <returns>Previous object's transform.</returns>
+        /// <returns>The previous sibling transform, or <see langword="null"/> if there is none.</returns>
         public static Transform GetPreviousSiblingTransform(this Transform transform)
         {
-            if (transform.GetSiblingIndex() == 0)
+            var siblingIndex = transform.GetSiblingIndex();
+            if (siblingIndex == 0)
                 return null;
 
-            if (transform.parent)
-                return transform.parent.GetChild(transform.GetSiblingIndex() - 1);
-            else
-                return transform.gameObject.scene.GetRootGameObjects()[transform.GetSiblingIndex() - 1].transform;
+            var parent = transform.parent;
+            if (parent)
+                return parent.GetChild(siblingIndex - 1);
+
+            using (ListPool<GameObject>.Get(out var roots))
+            {
+                transform.gameObject.scene.GetRootGameObjects(roots);
+                return roots[siblingIndex - 1].transform;
+            }
         }
 
         /// <summary>
-        /// Returns the next transform next to the current object. If there is no next one, then the current transform is returned.
+        /// Returns the next sibling transform, or null if this is the last sibling.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        /// <returns>Next object's transform.</returns>
+        /// <returns>The next sibling transform, or <see langword="null"/> if there is none.</returns>
         public static Transform GetNextSiblingTransform(this Transform transform)
         {
-            if (transform.parent)
+            var parent = transform.parent;
+            var siblingIndex = transform.GetSiblingIndex();
+            if (parent)
             {
-                if (transform.GetSiblingIndex() == transform.parent.childCount - 1)
+                if (siblingIndex == parent.childCount - 1)
                     return null;
 
-                return transform.parent.GetChild(transform.GetSiblingIndex() + 1);
+                return parent.GetChild(siblingIndex + 1);
             }
 
-            if (transform.GetSiblingIndex() == transform.gameObject.scene.rootCount - 1)
+            var scene = transform.gameObject.scene;
+            if (siblingIndex == scene.rootCount - 1)
                 return null;
 
-            return transform.gameObject.scene.GetRootGameObjects()[transform.GetSiblingIndex() + 1].transform;
+            using (ListPool<GameObject>.Get(out var roots))
+            {
+                scene.GetRootGameObjects(roots);
+                return roots[siblingIndex + 1].transform;
+            }
         }
 
         /// <summary>
-        /// Returns all sibling objects (its transform components).
+        /// Returns the transforms of all sibling objects.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="includeThis">Include this <paramref name="transform"/> object.</param>
-        /// <returns>Sibling objects transforms.</returns>
+        /// <returns>The sibling transforms, including this transform when requested.</returns>
         public static List<Transform> GetAllSiblingObjects(this Transform transform, bool includeThis = true)
         {
-            List<Transform> siblings;
-
-            if (transform.parent)
+            var parent = transform.parent;
+            if (parent)
             {
-                siblings = new List<Transform>(transform.parent.childCount);
+                var childCount = parent.childCount;
+                var siblings = new List<Transform>(childCount);
 
-                for (int i = 0; i < transform.parent.childCount; i++)
+                for (int i = 0; i < childCount; i++)
                 {
-                    var child = transform.parent.GetChild(i);
+                    var child = parent.GetChild(i);
 
-                    if (includeThis || !includeThis && child != transform)
-                        siblings.Add(child);
-                }    
-            }
-            else
-            {
-                var childs = transform.gameObject.scene.GetRootGameObjects();
-                siblings = new List<Transform>(childs.Length);
-
-                for (int i = 0; i < childs.Length; i++)
-                {
-                    var child = childs[i].transform;
-
-                    if (includeThis || !includeThis && child != transform)
+                    if (includeThis || child != transform)
                         siblings.Add(child);
                 }
+
+                return siblings;
             }
 
-            return siblings;
+            using (ListPool<GameObject>.Get(out var roots))
+            {
+                transform.gameObject.scene.GetRootGameObjects(roots);
+                var siblings = new List<Transform>(roots.Count);
+
+                for (int i = 0; i < roots.Count; i++)
+                {
+                    var child = roots[i].transform;
+
+                    if (includeThis || child != transform)
+                        siblings.Add(child);
+                }
+
+                return siblings;
+            }
         }
 
         /// <summary>
-        /// Gets list of all childs.
+        /// Gets a list of all direct children.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        /// <returns>List of all childs.</returns>
-        public static List<Transform> GetChilds(this Transform transform) => transform.Cast<Transform>().ToList();
+        /// <returns>A list of all direct child transforms.</returns>
+        public static List<Transform> GetChilds(this Transform transform)
+        {
+            var childCount = transform.childCount;
+            var childs = new List<Transform>(childCount);
+
+            for (int i = 0; i < childCount; i++)
+                childs.Add(transform.GetChild(i));
+
+            return childs;
+        }
 
         /// <summary>
         /// Gets a random child.
@@ -470,77 +503,109 @@ namespace Codomaster.Extensions
         public static Transform GetRandomChild(this Transform transform) => transform.GetChild(UnityEngine.Random.Range(0, transform.childCount));
 
         /// <summary>
-        /// Adds childs to transform.
+        /// Reparents the supplied transforms to this transform.
         /// </summary>
-        /// <param name="childs">Childs to add.</param>
+        /// <param name="childs">Children to reparent.</param>
         /// <param name="transform">Target transform.</param>
         public static void AddChilds(this Transform transform, params Transform[] childs) => AddChilds(transform, (IEnumerable<Transform>)childs);
 
         /// <summary>
-        /// Adds childs to transform.
+        /// Reparents the supplied transforms to this transform.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        /// <param name="childs">Childs to add.</param>
+        /// <param name="childs">Children to reparent.</param>
         public static void AddChilds(this Transform transform, IEnumerable<Transform> childs)
         {
-            foreach (var child in childs)
-                child.parent = transform;
+            using (ListPool<Transform>.Get(out var snapshot))
+            {
+                snapshot.AddRange(childs);
+
+                foreach (var child in snapshot)
+                    child.parent = transform;
+            }
         }
 
         /// <summary>
-        /// Destroy all childs.
+        /// Destroys all direct child game objects.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        public static void DestroyChilds(this Transform transform) => GetChilds(transform).ForEach(child => UnityObject.Destroy(child.gameObject));
+        public static void DestroyChilds(this Transform transform) => DestroyChilds(transform, 0);
 
         /// <summary>
-        /// Destroy all childs start from <paramref name="index"/>.
+        /// Destroys direct child game objects starting at <paramref name="index"/>.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        public static void DestroyChilds(this Transform transform, int index) => GetChilds(transform).Skip(index).ForEach(child => UnityObject.Destroy(child.gameObject));
+        /// <param name="index">Zero-based index of the first child to destroy.</param>
+        public static void DestroyChilds(this Transform transform, int index)
+        {
+            var childCount = transform.childCount;
+
+            for (int i = Mathf.Max(index, 0); i < childCount; i++)
+                UnityObject.Destroy(transform.GetChild(i).gameObject);
+        }
 
         /// <summary>
-        /// Destroy <paramref name="count"/> childs start from <paramref name="index"/>.
+        /// Destroys up to <paramref name="count"/> direct child game objects starting at <paramref name="index"/>.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        public static void DestroyChilds(this Transform transform, int index, int count) => GetChilds(transform).Skip(index).Take(count).ForEach(child => UnityObject.Destroy(child.gameObject));
+        /// <param name="index">Zero-based index of the first child to destroy.</param>
+        /// <param name="count">Maximum number of child game objects to destroy.</param>
+        public static void DestroyChilds(this Transform transform, int index, int count)
+        {
+            var childCount = transform.childCount;
+            var start = Mathf.Clamp(index, 0, childCount);
+            var end = start + Mathf.Min(Mathf.Max(count, 0), childCount - start);
+
+            for (int i = start; i < end; i++)
+                UnityObject.Destroy(transform.GetChild(i).gameObject);
+        }
 
         /// <summary>
-        /// Destroy all childs by coindition.
+        /// Destroys direct child game objects whose transforms satisfy the predicate.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         /// <param name="predicate">Condition.</param>
         public static void DestroyChildsWhere(this Transform transform, Predicate<Transform> predicate)
         {
-            var filtered = GetChilds(transform).Where(c => predicate(c));
+            using (ListPool<Transform>.Get(out var snapshot))
+            {
+                var childCount = transform.childCount;
 
-            foreach (var child in filtered)
-                UnityObject.Destroy(child.gameObject);
+                for (int i = 0; i < childCount; i++)
+                    snapshot.Add(transform.GetChild(i));
+
+                foreach (var child in snapshot)
+                {
+                    if (predicate(child))
+                        UnityObject.Destroy(child.gameObject);
+                }
+            }
         }
 
         /// <summary>
-        /// Destroy child by index.
+        /// Destroys the direct child game object at the specified index.
         /// </summary>
         /// <param name="transform">Target transform.</param>
+        /// <param name="index">Zero-based index of the child to destroy.</param>
         public static void DestroyChild(this Transform transform, int index) => UnityObject.Destroy(transform.GetChild(index).gameObject);
 
         /// <summary>
-        /// Destroy first child.
+        /// Destroys the first direct child game object.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         public static void DestroyFirstChild(this Transform transform) => DestroyChild(transform, 0);
 
         /// <summary>
-        /// Destroy last child.
+        /// Destroys the last direct child game object.
         /// </summary>
         /// <param name="transform">Target transform.</param>
         public static void DestroyLastChild(this Transform transform) => DestroyChild(transform, transform.childCount - 1);
 
         /// <summary>
-        /// Cast transform to RectTransform type.
+        /// Returns the transform as a RectTransform when the cast is valid.
         /// </summary>
         /// <param name="transform">Target transform.</param>
-        /// <returns>Casted RectTransform object.</returns>
+        /// <returns>The RectTransform, or <see langword="null"/> if the transform is not a RectTransform.</returns>
         public static RectTransform AsRect(this Transform transform) => transform as RectTransform;
     }
 }

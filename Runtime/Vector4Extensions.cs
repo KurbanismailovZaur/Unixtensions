@@ -1,65 +1,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class Vector4Extensions
     {
         /// <summary>
-        /// Sets value to vector's axis.
+        /// Sets the specified component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis">Axis index of the vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
-        public static Vector2 With(this Vector4 vector, int axis, float value)
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis">The index of the first component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="value">The value to assign to the specified component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
+        public static Vector4 With(this Vector4 vector, int axis, float value)
         {
             vector[axis] = value;
             return vector;
         }
 
         /// <summary>
-        /// Sets value to vector's x axis.
+        /// Sets the X component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithX(this Vector4 vector, float x) => With(vector, 0, x);
 
         /// <summary>
-        /// Sets value to vector's y axis.
+        /// Sets the Y component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithY(this Vector4 vector, float y) => With(vector, 1, y);
 
         /// <summary>
-        /// Sets value to vector's z axis.
+        /// Sets the Z component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithZ(this Vector4 vector, float z) => With(vector, 2, z);
 
         /// <summary>
-        /// Sets value to vector's w axis.
+        /// Sets the W component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithW(this Vector4 vector, float w) => With(vector, 3, w);
 
         /// <summary>
-        /// Sets values to vector's axes.
+        /// Sets the specified components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis index of the vector.</param>
-        /// <param name="value1">First value to set.</param>
-        /// <param name="axis2">Second axis index of the vector.</param>
-        /// <param name="value2">Second value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
-        public static Vector2 With(this Vector4 vector, int axis1, float value1, int axis2, float value2)
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the first component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="value1">The value to assign to the first specified component.</param>
+        /// <param name="axis2">The index of the second component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="value2">The value to assign to the second specified component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
+        public static Vector4 With(this Vector4 vector, int axis1, float value1, int axis2, float value2)
         {
             vector[axis1] = value1;
             vector[axis2] = value2;
@@ -68,119 +68,119 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Sets value to vector's x and y axis.
+        /// Sets the X and Y components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="y">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXY(this Vector4 vector, float x, float y) => With(vector, 0, x, 1, y);
 
         /// <summary>
-        /// Sets value to vector's x and y axis.
+        /// Sets the X and Y components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X and Y values to assign to the X and Y components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXY(this Vector4 vector, Vector2 value) => With(vector, 0, value.x, 1, value.y);
 
         /// <summary>
-        /// Sets value to vector's x and z axis.
+        /// Sets the X and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXZ(this Vector4 vector, float x, float z) => With(vector, 0, x, 2, z);
 
         /// <summary>
-        /// Sets value to vector's x and z axis.
+        /// Sets the X and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X and Y values to assign to the X and Z components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXZ(this Vector4 vector, Vector2 value) => With(vector, 0, value.x, 2, value.y);
 
         /// <summary>
-        /// Sets value to vector's x and w axis.
+        /// Sets the X and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXW(this Vector4 vector, float x, float w) => With(vector, 0, x, 3, w);
 
         /// <summary>
-        /// Sets value to vector's x and w axis.
+        /// Sets the X and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X and Y values to assign to the X and W components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXW(this Vector4 vector, Vector2 value) => With(vector, 0, value.x, 3, value.y);
 
         /// <summary>
-        /// Sets value to vector's y and z axis.
+        /// Sets the Y and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithYZ(this Vector4 vector, float y, float z) => With(vector, 1, y, 2, z);
 
         /// <summary>
-        /// Sets value to vector's y and z axis.
+        /// Sets the Y and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X and Y values to assign to the Y and Z components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithYZ(this Vector4 vector, Vector2 value) => With(vector, 1, value.x, 2, value.y);
 
         /// <summary>
-        /// Sets value to vector's y and w axis.
+        /// Sets the Y and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Value to set.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithYW(this Vector4 vector, float y, float w) => With(vector, 1, y, 3, w);
 
         /// <summary>
-        /// Sets value to vector's y and w axis.
+        /// Sets the Y and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X and Y values to assign to the Y and W components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithYW(this Vector4 vector, Vector2 value) => With(vector, 1, value.x, 3, value.y);
 
         /// <summary>
-        /// Sets value to vector's z and w axis.
+        /// Sets the Z and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="z">Value to set.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithZW(this Vector4 vector, float z, float w) => With(vector, 2, z, 3, w);
 
         /// <summary>
-        /// Sets value to vector's z and w axis.
+        /// Sets the Z and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X and Y values to assign to the Z and W components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithZW(this Vector4 vector, Vector2 value) => With(vector, 2, value.x, 3, value.y);
 
         /// <summary>
-        /// Sets values to vector's axes.
+        /// Sets the specified components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis index of the vector.</param>
-        /// <param name="value1">First value to set.</param>
-        /// <param name="axis2">Second axis index of the vector.</param>
-        /// <param name="value2">Second value to set.</param>
-        /// <param name="axis3">Second axis index of the vector.</param>
-        /// <param name="value3">Second value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
-        public static Vector2 With(this Vector4 vector, int axis1, float value1, int axis2, float value2, int axis3, float value3)
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the first component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="value1">The value to assign to the first specified component.</param>
+        /// <param name="axis2">The index of the second component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="value2">The value to assign to the second specified component.</param>
+        /// <param name="axis3">The index of the third component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="value3">The value to assign to the third specified component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
+        public static Vector4 With(this Vector4 vector, int axis1, float value1, int axis2, float value2, int axis3, float value3)
         {
             vector[axis1] = value1;
             vector[axis2] = value2;
@@ -190,120 +190,120 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Sets value to vector's x, y and z axis.
+        /// Sets the X, Y, and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="y">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXYZ(this Vector4 vector, float x, float y, float z) => With(vector, 0, x, 1, y, 2, z);
 
         /// <summary>
-        /// Sets value to vector's x, y and z axis.
+        /// Sets the X, Y, and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X, Y, and Z values to assign to the X, Y, and Z components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXYZ(this Vector4 vector, Vector3 value) => With(vector, 0, value.x, 1, value.y, 2, value.z);
 
         /// <summary>
-        /// Sets value to vector's x, y and w axis.
+        /// Sets the X, Y, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="y">Value to set.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXYW(this Vector4 vector, float x, float y, float w) => With(vector, 0, x, 1, y, 3, w);
 
         /// <summary>
-        /// Sets value to vector's x, y and w axis.
+        /// Sets the X, Y, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X, Y, and Z values to assign to the X, Y, and W components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXYW(this Vector4 vector, Vector3 value) => With(vector, 0, value.x, 1, value.y, 3, value.z);
 
         /// <summary>
-        /// Sets value to vector's x, z and w axis.
+        /// Sets the X, Z, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="x">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="x">The value to assign to the X component.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXZW(this Vector4 vector, float x, float z, float w) => With(vector, 0, x, 2, z, 3, w);
 
         /// <summary>
-        /// Sets value to vector's x, z and w axis.
+        /// Sets the X, Z, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X, Y, and Z values to assign to the X, Z, and W components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithXZW(this Vector4 vector, Vector3 value) => With(vector, 0, value.x, 2, value.y, 3, value.z);
 
         /// <summary>
-        /// Sets value to vector's y, z and w axis.
+        /// Sets the Y, Z, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="y">Value to set.</param>
-        /// <param name="z">Value to set.</param>
-        /// <param name="w">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="y">The value to assign to the Y component.</param>
+        /// <param name="z">The value to assign to the Z component.</param>
+        /// <param name="w">The value to assign to the W component.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithYZW(this Vector4 vector, float y, float z, float w) => With(vector, 1, y, 2, z, 3, w);
 
         /// <summary>
-        /// Sets value to vector's y, z and w axis.
+        /// Sets the Y, Z, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="value">Value to set.</param>
-        /// <returns>Changed copy of the vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="value">The X, Y, and Z values to assign to the Y, Z, and W components, respectively.</param>
+        /// <returns>A copy of the vector with the specified components set and all other components unchanged.</returns>
         public static Vector4 WithYZW(this Vector4 vector, Vector3 value) => With(vector, 1, value.x, 2, value.y, 3, value.z);
 
         /// <summary>
-        /// Inverts value of specified axis.
+        /// Negates the specified component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <param name="axis">Target axis.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis">The index of the first component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <returns>A copy of the vector with the specified component negated and all other components unchanged.</returns>
         public static Vector4 WithNegate(this Vector4 vector, int axis) => vector.With(axis, -vector[axis]);
 
         /// <summary>
-        /// Inverts x axis value.
+        /// Negates the X component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified component negated and all other components unchanged.</returns>
         public static Vector4 WithNegateX(this Vector4 vector) => WithNegate(vector, 0);
 
         /// <summary>
-        /// Inverts y axis value.
+        /// Negates the Y component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified component negated and all other components unchanged.</returns>
         public static Vector4 WithNegateY(this Vector4 vector) => WithNegate(vector, 1);
 
         /// <summary>
-        /// Inverts z axis value.
+        /// Negates the Z component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified component negated and all other components unchanged.</returns>
         public static Vector4 WithNegateZ(this Vector4 vector) => WithNegate(vector, 2);
 
         /// <summary>
-        /// Inverts w axis value.
+        /// Negates the W component in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axis value.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified component negated and all other components unchanged.</returns>
         public static Vector4 WithNegateW(this Vector4 vector) => WithNegate(vector, 3);
 
         /// <summary>
-        /// Inverts values of specified axes.
+        /// Negates the specified components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the first component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis2">The index of the second component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegate(this Vector4 vector, int axis1, int axis2)
         {
             vector[axis1] = -vector[axis1];
@@ -313,48 +313,48 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Inverts x and y axes values.
+        /// Negates the X and Y components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateXY(this Vector4 vector) => vector.WithNegate(0, 1);
 
         /// <summary>
-        /// Inverts x and z axes values.
+        /// Negates the X and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateXZ(this Vector4 vector) => vector.WithNegate(0, 2);
 
         /// <summary>
-        /// Inverts x and w axes values.
+        /// Negates the X and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateXW(this Vector4 vector) => vector.WithNegate(0, 3);
 
         /// <summary>
-        /// Inverts y and z axes values.
+        /// Negates the Y and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateYZ(this Vector4 vector) => vector.WithNegate(1, 2);
 
         /// <summary>
-        /// Inverts y and w axes values.
+        /// Negates the Y and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateYW(this Vector4 vector) => vector.WithNegate(1, 3);
 
         /// <summary>
-        /// Inverts values of specified axes.
+        /// Negates the specified components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <param name="axis2">Third axis.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the first component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis2">The index of the second component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis3">The index of the third component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegate(this Vector4 vector, int axis1, int axis2, int axis3)
         {
             vector[axis1] = -vector[axis1];
@@ -365,481 +365,481 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Inverts x, y and z axes values.
+        /// Negates the X, Y, and Z components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateXYZ(this Vector4 vector) => vector.WithNegate(0, 1, 2);
 
         /// <summary>
-        /// Inverts x, y and w axes values.
+        /// Negates the X, Y, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateXYW(this Vector4 vector) => vector.WithNegate(0, 1, 3);
 
         /// <summary>
-        /// Inverts x, z and w axes values.
+        /// Negates the X, Z, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateXZW(this Vector4 vector) => vector.WithNegate(0, 2, 3);
 
         /// <summary>
-        /// Inverts y, z and w axes values.
+        /// Negates the Y, Z, and W components in a copy of the vector.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Vector with inverted axes values.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A copy of the vector with the specified components negated.</returns>
         public static Vector4 WithNegateYZW(this Vector4 vector) => vector.WithNegate(1, 2, 3);
 
         /// <summary>
-        /// Inverts vector.
+        /// Returns a vector with each component negated.
         /// </summary>
-        /// <param name="vector">The vector.</param>
-        /// <returns>Inverted vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The negated vector.</returns>
         public static Vector4 Negate(this Vector4 vector) => new(-vector.x, -vector.y, -vector.z, -vector.w);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by axes.
+        /// Creates a <see cref="Vector2"/> from the specified components in the given order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the source component to use as the X component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis2">The index of the source component to use as the Y component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 Get(this Vector4 vector, int axis1, int axis2) => new Vector2(vector[axis1], vector[axis2]);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by x and y axes.
+        /// Creates a <see cref="Vector2"/> from the X and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetXY(this Vector4 vector) => Get(vector, 0, 1);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by x and z axes.
+        /// Creates a <see cref="Vector2"/> from the X and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetXZ(this Vector4 vector) => Get(vector, 0, 2);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by x and w axes.
+        /// Creates a <see cref="Vector2"/> from the X and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetXW(this Vector4 vector) => Get(vector, 0, 3);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by y and x axes.
+        /// Creates a <see cref="Vector2"/> from the Y and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetYX(this Vector4 vector) => Get(vector, 1, 0);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by y and z axes.
+        /// Creates a <see cref="Vector2"/> from the Y and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetYZ(this Vector4 vector) => Get(vector, 1, 2);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by y and w axes.
+        /// Creates a <see cref="Vector2"/> from the Y and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetYW(this Vector4 vector) => Get(vector, 1, 3);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by z and x axes.
+        /// Creates a <see cref="Vector2"/> from the Z and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetZX(this Vector4 vector) => Get(vector, 2, 0);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by z and y axes.
+        /// Creates a <see cref="Vector2"/> from the Z and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetZY(this Vector4 vector) => Get(vector, 2, 1);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by z and w axes.
+        /// Creates a <see cref="Vector2"/> from the Z and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetZW(this Vector4 vector) => Get(vector, 2, 3);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by w and x axes.
+        /// Creates a <see cref="Vector2"/> from the W and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetWX(this Vector4 vector) => Get(vector, 3, 0);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by w and y axes.
+        /// Creates a <see cref="Vector2"/> from the W and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetWY(this Vector4 vector) => Get(vector, 3, 1);
 
         /// <summary>
-        /// Gets <see cref="Vector2"/> by w and z axes.
+        /// Creates a <see cref="Vector2"/> from the W and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector2"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector2"/> containing the selected components in the specified order.</returns>
         public static Vector2 GetWZ(this Vector4 vector) => Get(vector, 3, 2);
 
         /// <summary>
-        /// Gets vector with swapped axes.
+        /// Creates a <see cref="Vector3"/> from the specified components in the given order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <param name="axis3">Third axis.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the source component to use as the X component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis2">The index of the source component to use as the Y component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis3">The index of the source component to use as the Z component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 Get(this Vector4 vector, int axis1, int axis2, int axis3) => new Vector3(vector[axis1], vector[axis2], vector[axis3]);
 
         /// <summary>
-        /// Gets vector by x, y and z axes.
+        /// Creates a <see cref="Vector3"/> from the X, Y, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetXYZ(this Vector4 vector) => Get(vector, 0, 1, 2);
 
         /// <summary>
-        /// Gets vector by x, y and w axes.
+        /// Creates a <see cref="Vector3"/> from the X, Y, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetXYW(this Vector4 vector) => Get(vector, 0, 1, 3);
 
         /// <summary>
-        /// Gets vector by x, z and y axes.
+        /// Creates a <see cref="Vector3"/> from the X, Z, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetXZY(this Vector4 vector) => Get(vector, 0, 2, 1);
 
         /// <summary>
-        /// Gets vector by x, z and w axes.
+        /// Creates a <see cref="Vector3"/> from the X, Z, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetXZW(this Vector4 vector) => Get(vector, 0, 2, 3);
 
         /// <summary>
-        /// Gets vector by x, w and y axes.
+        /// Creates a <see cref="Vector3"/> from the X, W, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetXWY(this Vector4 vector) => Get(vector, 0, 3, 1);
 
         /// <summary>
-        /// Gets vector by x, w and z axes.
+        /// Creates a <see cref="Vector3"/> from the X, W, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetXWZ(this Vector4 vector) => Get(vector, 0, 3, 2);
 
         /// <summary>
-        /// Gets vector by y, x and z axes.
+        /// Creates a <see cref="Vector3"/> from the Y, X, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetYXZ(this Vector4 vector) => Get(vector, 1, 0, 2);
 
         /// <summary>
-        /// Gets vector by y, x and w axes.
+        /// Creates a <see cref="Vector3"/> from the Y, X, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetYXW(this Vector4 vector) => Get(vector, 1, 0, 3);
 
         /// <summary>
-        /// Gets vector by y, z and x axes.
+        /// Creates a <see cref="Vector3"/> from the Y, Z, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetYZX(this Vector4 vector) => Get(vector, 1, 2, 0);
 
         /// <summary>
-        /// Gets vector by y, z and w axes.
+        /// Creates a <see cref="Vector3"/> from the Y, Z, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetYZW(this Vector4 vector) => Get(vector, 1, 2, 3);
 
         /// <summary>
-        /// Gets vector by y, w and x axes.
+        /// Creates a <see cref="Vector3"/> from the Y, W, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetYWX(this Vector4 vector) => Get(vector, 1, 3, 0);
 
         /// <summary>
-        /// Gets vector by y, w and z axes.
+        /// Creates a <see cref="Vector3"/> from the Y, W, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetYWZ(this Vector4 vector) => Get(vector, 1, 3, 2);
 
         /// <summary>
-        /// Gets vector by z, x and y axes.
+        /// Creates a <see cref="Vector3"/> from the Z, X, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetZXY(this Vector4 vector) => Get(vector, 2, 0, 1);
 
         /// <summary>
-        /// Gets vector by z, x and w axes.
+        /// Creates a <see cref="Vector3"/> from the Z, X, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetZXW(this Vector4 vector) => Get(vector, 2, 0, 3);
 
         /// <summary>
-        /// Gets vector by z, y and x axes.
+        /// Creates a <see cref="Vector3"/> from the Z, Y, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetZYX(this Vector4 vector) => Get(vector, 2, 1, 0);
 
         /// <summary>
-        /// Gets vector by z, y and w axes.
+        /// Creates a <see cref="Vector3"/> from the Z, Y, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetZYW(this Vector4 vector) => Get(vector, 2, 1, 3);
 
         /// <summary>
-        /// Gets vector by z, w and x axes.
+        /// Creates a <see cref="Vector3"/> from the Z, W, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetZWX(this Vector4 vector) => Get(vector, 2, 3, 0);
 
         /// <summary>
-        /// Gets vector by z, w and y axes.
+        /// Creates a <see cref="Vector3"/> from the Z, W, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetZWY(this Vector4 vector) => Get(vector, 2, 3, 1);
 
         /// <summary>
-        /// Gets vector by w, x and y axes.
+        /// Creates a <see cref="Vector3"/> from the W, X, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetWXY(this Vector4 vector) => Get(vector, 3, 0, 1);
 
         /// <summary>
-        /// Gets vector by w, x and z axes.
+        /// Creates a <see cref="Vector3"/> from the W, X, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetWXZ(this Vector4 vector) => Get(vector, 3, 0, 2);
 
         /// <summary>
-        /// Gets vector by w, y and x axes.
+        /// Creates a <see cref="Vector3"/> from the W, Y, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetWYX(this Vector4 vector) => Get(vector, 3, 1, 0);
 
         /// <summary>
-        /// Gets vector by w, y and z axes.
+        /// Creates a <see cref="Vector3"/> from the W, Y, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetWYZ(this Vector4 vector) => Get(vector, 3, 1, 2);
 
         /// <summary>
-        /// Gets vector by w, z and x axes.
+        /// Creates a <see cref="Vector3"/> from the W, Z, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetWZX(this Vector4 vector) => Get(vector, 3, 2, 0);
 
         /// <summary>
-        /// Gets vector by w, z and y axes.
+        /// Creates a <see cref="Vector3"/> from the W, Z, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector3"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector3"/> containing the selected components in the specified order.</returns>
         public static Vector3 GetWZY(this Vector4 vector) => Get(vector, 3, 2, 1);
 
         /// <summary>
-        /// Gets vector with swapped axes.
+        /// Creates a <see cref="Vector4"/> from the specified components in the given order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="axis1">First axis.</param>
-        /// <param name="axis2">Second axis.</param>
-        /// <param name="axis3">Third axis.</param>
-        /// <param name="axis4">Fourth axis.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="axis1">The index of the source component to use as the X component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis2">The index of the source component to use as the Y component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis3">The index of the source component to use as the Z component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <param name="axis4">The index of the source component to use as the W component (0 = X, 1 = Y, 2 = Z, 3 = W).</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 Get(this Vector4 vector, int axis1, int axis2, int axis3, int axis4) => new Vector4(vector[axis1], vector[axis2], vector[axis3], vector[axis4]);
 
         /// <summary>
-        /// Gets vector by x, y, w and z axes.
+        /// Creates a <see cref="Vector4"/> from the X, Y, W, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetXYWZ(this Vector4 vector) => Get(vector, 0, 1, 3, 2);
 
         /// <summary>
-        /// Gets vector by x, z, y and w axes.
+        /// Creates a <see cref="Vector4"/> from the X, Z, Y, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetXZYW(this Vector4 vector) => Get(vector, 0, 2, 1, 3);
 
         /// <summary>
-        /// Gets vector by x, z, w and y axes.
+        /// Creates a <see cref="Vector4"/> from the X, Z, W, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetXZWY(this Vector4 vector) => Get(vector, 0, 2, 3, 1);
 
         /// <summary>
-        /// Gets vector by x, w, y and z axes.
+        /// Creates a <see cref="Vector4"/> from the X, W, Y, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetXWYZ(this Vector4 vector) => Get(vector, 0, 3, 1, 2);
 
         /// <summary>
-        /// Gets vector by x, w, z and y axes.
+        /// Creates a <see cref="Vector4"/> from the X, W, Z, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetXWZY(this Vector4 vector) => Get(vector, 0, 3, 2, 1);
 
         /// <summary>
-        /// Gets vector by y, x, z and w axes.
+        /// Creates a <see cref="Vector4"/> from the Y, X, Z, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetYXZW(this Vector4 vector) => Get(vector, 1, 0, 2, 3);
 
         /// <summary>
-        /// Gets vector by y, x, w and z axes.
+        /// Creates a <see cref="Vector4"/> from the Y, X, W, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetYXWZ(this Vector4 vector) => Get(vector, 1, 0, 3, 2);
 
         /// <summary>
-        /// Gets vector by y, z, x and w axes.
+        /// Creates a <see cref="Vector4"/> from the Y, Z, X, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetYZXW(this Vector4 vector) => Get(vector, 1, 2, 0, 3);
 
         /// <summary>
-        /// Gets vector by y, z, w and x axes.
+        /// Creates a <see cref="Vector4"/> from the Y, Z, W, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetYZWX(this Vector4 vector) => Get(vector, 1, 2, 3, 0);
 
         /// <summary>
-        /// Gets vector by y, w, x and z axes.
+        /// Creates a <see cref="Vector4"/> from the Y, W, X, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetYWXZ(this Vector4 vector) => Get(vector, 1, 3, 0, 2);
 
         /// <summary>
-        /// Gets vector by y, w, z and x axes.
+        /// Creates a <see cref="Vector4"/> from the Y, W, Z, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetYWZX(this Vector4 vector) => Get(vector, 1, 3, 2, 0);
 
         /// <summary>
-        /// Gets vector by z, x, y and w axes.
+        /// Creates a <see cref="Vector4"/> from the Z, X, Y, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetZXYW(this Vector4 vector) => Get(vector, 2, 0, 1, 3);
 
         /// <summary>
-        /// Gets vector by z, x, w and y axes.
+        /// Creates a <see cref="Vector4"/> from the Z, X, W, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetZXWY(this Vector4 vector) => Get(vector, 2, 0, 3, 1);
 
         /// <summary>
-        /// Gets vector by z, y, x and w axes.
+        /// Creates a <see cref="Vector4"/> from the Z, Y, X, and W components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetZYXW(this Vector4 vector) => Get(vector, 2, 1, 0, 3);
 
         /// <summary>
-        /// Gets vector by z, y, w and x axes.
+        /// Creates a <see cref="Vector4"/> from the Z, Y, W, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetZYWX(this Vector4 vector) => Get(vector, 2, 1, 3, 0);
 
         /// <summary>
-        /// Gets vector by z, w, x and y axes.
+        /// Creates a <see cref="Vector4"/> from the Z, W, X, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetZWXY(this Vector4 vector) => Get(vector, 2, 3, 0, 1);
 
         /// <summary>
-        /// Gets vector by z, w, y and x axes.
+        /// Creates a <see cref="Vector4"/> from the Z, W, Y, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetZWYX(this Vector4 vector) => Get(vector, 2, 3, 1, 0);
 
         /// <summary>
-        /// Gets vector by w, x, y and z axes.
+        /// Creates a <see cref="Vector4"/> from the W, X, Y, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetWXYZ(this Vector4 vector) => Get(vector, 3, 0, 1, 2);
 
         /// <summary>
-        /// Gets vector by w, x, z and y axes.
+        /// Creates a <see cref="Vector4"/> from the W, X, Z, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetWXZY(this Vector4 vector) => Get(vector, 3, 0, 2, 1);
 
         /// <summary>
-        /// Gets vector by w, y, x and z axes.
+        /// Creates a <see cref="Vector4"/> from the W, Y, X, and Z components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetWYXZ(this Vector4 vector) => Get(vector, 3, 1, 0, 2);
 
         /// <summary>
-        /// Gets vector by w, y, z and x axes.
+        /// Creates a <see cref="Vector4"/> from the W, Y, Z, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetWYZX(this Vector4 vector) => Get(vector, 3, 1, 2, 0);
 
         /// <summary>
-        /// Gets vector by w, z, x and y axes.
+        /// Creates a <see cref="Vector4"/> from the W, Z, X, and Y components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetWZXY(this Vector4 vector) => Get(vector, 3, 2, 0, 1);
 
         /// <summary>
-        /// Gets vector by w, z, y and x axes.
+        /// Creates a <see cref="Vector4"/> from the W, Z, Y, and X components, in that order.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see cref="Vector4"/> vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A <see cref="Vector4"/> containing the selected components in the specified order.</returns>
         public static Vector4 GetWZYX(this Vector4 vector) => Get(vector, 3, 2, 1, 0);
 
         private static void Compare(Vector4 vector, ref int index, int compareIndex, int result)
@@ -860,10 +860,10 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Gets max component info from vector.
+        /// Gets the index and value of the largest component.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Vector's max component tuple info.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The index of the first largest component and its value.</returns>
         public static (int index, float value) MaxComponent(this Vector4 vector)
         {
             var index = CompareAllComponents(vector, 1);
@@ -871,10 +871,10 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Gets min component info from vector.
+        /// Gets the index and value of the smallest component.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Vector's min component tuple info.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The index of the first smallest component and its value.</returns>
         public static (int index, float value) MinComponent(this Vector4 vector)
         {
             var index = CompareAllComponents(vector, -1);
@@ -882,71 +882,71 @@ namespace Codomaster.Extensions
         }
 
         /// <summary>
-        /// Remaps all vector's components from one interval to other.
+        /// Linearly remaps each component from the source range to the target range.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="min1">Min value of the beginning interval.</param>
-        /// <param name="max1">Max value of the beginning interval.</param>
-        /// <param name="min2">Min value of the target interval.</param>
-        /// <param name="max2">Max value of the target interval.</param>
-        /// <returns>Remaped vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="min1">The lower bound of the source range.</param>
+        /// <param name="max1">The upper bound of the source range.</param>
+        /// <param name="min2">The lower bound of the target range.</param>
+        /// <param name="max2">The upper bound of the target range.</param>
+        /// <returns>A vector with remapped components. The result is not clamped to the target range.</returns>
         public static Vector4 Remap(this Vector4 vector, float min1, float max1, float min2, float max2)
         {
             return new Vector4(vector.x.Remap(min1, max1, min2, max2), vector.y.Remap(min1, max1, min2, max2), vector.z.Remap(min1, max1, min2, max2), vector.w.Remap(min1, max1, min2, max2));
         }
 
         /// <summary>
-        /// Creates new vector with absolute components.
+        /// Creates a vector containing the absolute value of each component.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Vector with absolute components.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A vector with the absolute component values.</returns>
         public static Vector4 Abs(this Vector4 vector) => new Vector4(Mathf.Abs(vector.x), Mathf.Abs(vector.y), Mathf.Abs(vector.z), Mathf.Abs(vector.w));
 
         /// <summary>
-        /// Creates new vector with clamped components.
+        /// Creates a vector with each component clamped to the specified range.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="min">The minimum floating value to campare agains.</param>
-        /// <param name="max">The maximum floating value to campare agains.</param>
-        /// <returns>Clamped vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="min">The minimum allowed component value.</param>
+        /// <param name="max">The maximum allowed component value.</param>
+        /// <returns>A vector with each component clamped to the range.</returns>
         public static Vector4 Clamp(this Vector4 vector, float min, float max)
         {
             return new Vector4(Mathf.Clamp(vector.x, min, max), Mathf.Clamp(vector.y, min, max), Mathf.Clamp(vector.z, min, max), Mathf.Clamp(vector.w, min, max));
         }
 
         /// <summary>
-        /// Creates and returns a vector whose components are limited to 0 and 1.
+        /// Creates a vector with each component clamped to the range from zero to one.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>Clamped vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>A vector with each component clamped to the range from zero to one.</returns>
         public static Vector4 Clamp01(this Vector4 vector)
         {
             return new Vector4(Mathf.Clamp01(vector.x), Mathf.Clamp01(vector.y), Mathf.Clamp01(vector.z), Mathf.Clamp01(vector.w));
         }
 
         /// <summary>
-        /// Creates and returns a vector whose components are divided by the value.
+        /// Divides each component by the corresponding component of <paramref name="other"/>.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <param name="other">Vector on which divide</param>
-        /// <returns>Divided vector.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="other">The vector containing the divisor for each component.</param>
+        /// <returns>A vector containing the component-wise quotients.</returns>
         public static Vector4 Divide(this Vector4 vector, Vector4 other)
         {
             return new Vector4(vector.x / other.x, vector.y / other.y, vector.z / other.z, vector.w / other.w);
         }
 
         /// <summary>
-        /// Checks if the vector contains NaN component.
+        /// Checks whether any component is NaN.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns>True, if any components of the vector are NaN</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns><see langword="true"/> if any component is NaN; otherwise, <see langword="false"/>.</returns>
         public static bool IsNaN(this Vector4 vector) => float.IsNaN(vector.x) || float.IsNaN(vector.y) || float.IsNaN(vector.z) || float.IsNaN(vector.w);
 
         /// <summary>
-        /// Checks if the vector components are equals.
+        /// Checks whether each pair of adjacent components is approximately equal.
         /// </summary>
-        /// <param name="vector">Target vector.</param>
-        /// <returns><see langword="true"/> if vector's components are equals.</returns>
+        /// <param name="vector">The source vector.</param>
+        /// <returns><see langword="true"/> if each pair of adjacent components is approximately equal; otherwise, <see langword="false"/>.</returns>
         public static bool IsUniform(this Vector4 vector)
         {
             return vector.x.Approx(vector.y) && vector.y.Approx(vector.z) && vector.z.Approx(vector.w);

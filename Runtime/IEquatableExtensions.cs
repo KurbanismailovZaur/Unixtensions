@@ -1,26 +1,43 @@
 using System;
-using System.Linq;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class IEquatableExtensions
     {
         /// <summary>
-        ///  Checks if the <paramref name="value"/> equals to all elements of <paramref name="values"/> array.
+        /// Checks whether every element of <paramref name="values"/> equals <paramref name="value"/>.
         /// </summary>
-        /// <typeparam name="T">Source type.</typeparam>
-        /// <param name="value">Object to compare.</param>
-        /// <param name="values">Array with objects to compare.</param>
-        /// <returns><see langword="true"/> if the all element of <paramref name="values"/> are equals to <paramref name="value"/>.</returns>
-        public static bool EqualsToAll<T>(this T value, params T[] values) where T : IEquatable<T> => values.All(o => o.Equals(value));
+        /// <typeparam name="T">The type of the values to compare.</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="values">The elements to compare against the value.</param>
+        /// <returns><see langword="true"/> if every element equals the value; otherwise, <see langword="false"/>. An empty array returns <see langword="true"/>.</returns>
+        public static bool EqualsToAll<T>(this T value, params T[] values) where T : IEquatable<T>
+        {
+            foreach (var candidate in values)
+            {
+                if (!candidate.Equals(value))
+                    return false;
+            }
+
+            return true;
+        }
 
         /// <summary>
-        ///  Checks if the <paramref name="value"/> equals to at least one of elements of <paramref name="values"/> array.
+        /// Checks whether at least one element of <paramref name="values"/> equals <paramref name="value"/>.
         /// </summary>
-        /// <typeparam name="T">Source type.</typeparam>
-        /// <param name="value">Object to compare.</param>
-        /// <param name="values">Array with objects to compare.</param>
-        /// <returns><see langword="true"/> if at least one of all elements of <paramref name="values"/> are equals to <paramref name="value"/>.</returns>
-        public static bool EqualsToAny<T>(this T value, params T[] values) where T : IEquatable<T> => values.Any(o => o.Equals(value));
+        /// <typeparam name="T">The type of the values to compare.</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="values">The elements to compare against the value.</param>
+        /// <returns><see langword="true"/> if at least one element equals the value; otherwise, <see langword="false"/>. An empty array returns <see langword="false"/>.</returns>
+        public static bool EqualsToAny<T>(this T value, params T[] values) where T : IEquatable<T>
+        {
+            foreach (var candidate in values)
+            {
+                if (candidate.Equals(value))
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

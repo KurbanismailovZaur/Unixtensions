@@ -2,38 +2,44 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Codomaster.Extensions
+namespace Unixtensions
 {
     public static class DoubleExtensions
     {
         /// <summary>
-        /// Remap a value from one range to another.
+        /// Linearly maps a value from one range to another without clamping.
         /// </summary>
-        /// <param name="value">Source value.</param>
-        /// <param name="min1">Source min.</param>
-        /// <param name="max1">Source max.</param>
-        /// <param name="min2">Target min.</param>
-        /// <param name="max2">Target max</param>
-        /// <returns>Remaped value.</returns>
+        /// <param name="value">The value to remap.</param>
+        /// <param name="min1">The start of the source range.</param>
+        /// <param name="max1">The end of the source range.</param>
+        /// <param name="min2">The start of the target range.</param>
+        /// <param name="max2">The end of the target range.</param>
+        /// <returns>The remapped value.</returns>
         public static double Remap(this double value, double min1, double max1, double min2, double max2)
         {
             return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
         }
 
         /// <summary>
-        /// Checks <paramref name="value"/> for approximate equality with <paramref name="other"/> and <paramref name="tolerance"/>.
+        /// Checks whether two values are approximately equal using a relative tolerance of 1E-12.
         /// </summary>
-        /// <param name="value">First operand.</param>
-        /// <param name="other">Second operand.</param>
-        /// <param name="minDifference">If difference between <paramref name="value"/> and <paramref name="other"/> is smaller than this, then result is true.</param>
-        /// <returns><see langword="true"/> if the variables are the same.</returns>
-        public static bool Approx(this double value, double other, double minDifference = 1E-17) => Math.Abs(value - other) <= minDifference;
+        /// <remarks>
+        /// The absolute difference must be less than the greater of 1E-12 times the larger absolute value
+        /// and eight times <see cref="Double.Epsilon"/>. Comparisons involving NaN or infinity return false.
+        /// </remarks>
+        /// <param name="value">The first value to compare.</param>
+        /// <param name="other">The second value to compare.</param>
+        /// <returns><see langword="true"/> if the values are approximately equal; otherwise, <see langword="false"/>.</returns>
+        public static bool Approx(this double value, double other)
+        {
+            return Math.Abs(value - other) < Math.Max(1E-12 * Math.Max(Math.Abs(value), Math.Abs(other)), double.Epsilon * 8);
+        }
 
         /// <summary>
-        /// Randomly changes the sign (+ or -) of <paramref name="value"/>.
+        /// Returns <paramref name="value"/> with its sign randomly preserved or reversed.
         /// </summary>
-        /// <param name="value">Target value.</param>
-        /// <returns>Value with randomed sign.</returns>
+        /// <param name="value">The value whose sign is randomized.</param>
+        /// <returns>The original value or its negation.</returns>
         public static double WithRandomSign(this double value) => value * (Random.Range(0, 2) * 2 - 1);
     }
 }
