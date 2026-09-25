@@ -1,7 +1,7 @@
 {
-  "name": "com.codomaster.extensions",
-  "version": "1.1.1",
-  "displayName": "Unity API Extensions",
+  "name": "com.codomaster.unixtensions",
+  "version": "1.1.2",
+  "displayName": "Unixtensions",
   "description": "This package contains a lot of extension methods for unity, which make developing more convenient.",
   "unity": "2021.1",
   "author": {
